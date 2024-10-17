@@ -7,37 +7,31 @@
 
 .App-header {
   background-color: #282c34;
-  padding: 15px 30px; /* Adjust padding for spacing */
+  padding: 10px 20px; /* Balanced padding */
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  color: white;
+}
+
+.navbar {
+  list-style-type: none; /* Remove bullet points */
+  display: flex; /* Align links horizontally */
+  gap: 20px; /* Add space between links */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none; /* Remove underline */
+  color: white;
   font-size: 18px;
-  display: flex;
-  justify-content: space-between; /* Push logo left and links right */
-  align-items: center; /* Vertically align items */
-  color: white;
+  transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
-.nav-links {
-  display: flex;
-  gap: 20px; /* Space between links */
+.navbar a:hover {
+  color: #61dafb; /* Light blue hover effect */
 }
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
-}
-
-.nav-logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
 
 .App-main {
   flex: 1;
