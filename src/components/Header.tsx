@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/Header.module.css';
 
@@ -14,6 +13,16 @@ function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 70, // Offset for the sticky header
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.banner}>
@@ -28,18 +37,18 @@ function Header() {
 
       <nav className={styles.navigation}>
         <div className={styles.navContainer}>
-          <Link href="/" className={styles.navLink}>
+          <a onClick={() => scrollToSection('home')} className={styles.navLink}>
             Home
-          </Link>
-          <Link href="/leaderboard" className={styles.navLink}>
-            Leaderboard
-          </Link>
-          <Link href="/trivia" className={styles.navLink}>
+          </a>
+          <a onClick={() => scrollToSection('trivia')} className={styles.navLink}>
             Trivia
-          </Link>
-          <Link href="/about" className={styles.navLink}>
+          </a>
+          <a onClick={() => scrollToSection('about')} className={styles.navLink}>
             About
-          </Link>
+          </a>
+          <a onClick={() => scrollToSection('contact')} className={styles.navLink}>
+            Contact
+          </a>
         </div>
       </nav>
     </header>

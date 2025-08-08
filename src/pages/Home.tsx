@@ -2,8 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import styles from '../styles/Home.module.css';
 
 const Home: React.FC = () => {
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
+  const sectionRefs = {
+    home: useRef<HTMLDivElement>(null),
+    trivia: useRef<HTMLDivElement>(null),
+    about: useRef<HTMLDivElement>(null),
+    contact: useRef<HTMLDivElement>(null)
+  };
   
   useEffect(() => {
     const observerOptions = {
@@ -19,18 +23,54 @@ const Home: React.FC = () => {
       });
     }, observerOptions);
     
-    if (aboutRef.current) observer.observe(aboutRef.current);
-    if (contactRef.current) observer.observe(contactRef.current);
+    // Observe all section refs
+    Object.values(sectionRefs).forEach(ref => {
+      if (ref.current) observer.observe(ref.current);
+    });
     
     return () => {
-      if (aboutRef.current) observer.unobserve(aboutRef.current);
-      if (contactRef.current) observer.unobserve(contactRef.current);
+      // Cleanup observer
+      Object.values(sectionRefs).forEach(ref => {
+        if (ref.current) observer.unobserve(ref.current);
+      });
     };
   }, []);
   
   return (
     <div className={styles.container}>
-      <section ref={aboutRef} className={`${styles.section} ${styles.aboutSection}`}>
+      <section id="home" ref={sectionRefs.home} className={`${styles.section} ${styles.homeSection}`}>
+        <h2 className={styles.sectionTitle}>Welcome</h2>
+        <div className={styles.content}>
+          <p>Welcome to the UFC Trivia Club, where knowledge meets passion. Test your UFC knowledge, learn interesting facts, and connect with other fans!</p>
+          <div className={styles.actionButtons}>
+            <button className={styles.primaryButton}>Start Trivia</button>
+            <button className={styles.secondaryButton}>Learn More</button>
+          </div>
+        </div>
+      </section>
+      
+      <section id="trivia" ref={sectionRefs.trivia} className={`${styles.section} ${styles.triviaSection}`}>
+        <h2 className={styles.sectionTitle}>Trivia</h2>
+        <div className={styles.triviaContainer}>
+          <div className={styles.triviaCard}>
+            <h3>Fighter Trivia</h3>
+            <p>Test your knowledge about UFC fighters, their records, and achievements.</p>
+            <button className={styles.triviaButton}>Start</button>
+          </div>
+          <div className={styles.triviaCard}>
+            <h3>Event Trivia</h3>
+            <p>Challenge yourself with questions about historic UFC events and moments.</p>
+            <button className={styles.triviaButton}>Start</button>
+          </div>
+          <div className={styles.triviaCard}>
+            <h3>UFC History</h3>
+            <p>How well do you know the history and evolution of the UFC?</p>
+            <button className={styles.triviaButton}>Start</button>
+          </div>
+        </div>
+      </section>
+      
+      <section id="about" ref={sectionRefs.about} className={`${styles.section} ${styles.aboutSection}`}>
         <h2 className={styles.sectionTitle}>About</h2>
         <div className={styles.aboutContent}>
           <div className={styles.aboutText}>
@@ -46,12 +86,13 @@ const Home: React.FC = () => {
         </div>
       </section>
       
-      <section ref={contactRef} className={`${styles.section} ${styles.contactSection}`}>
-        <h2 className={styles.sectionTitle}>Get in Touch</h2>
+      <section id="contact" ref={sectionRefs.contact} className={`${styles.section} ${styles.contactSection}`}>
+        <h2 className={styles.sectionTitle}>Contact Us</h2>
         <form className={styles.contactForm}>
           <input type="text" placeholder="Name" className={styles.formInput} />
           <input type="email" placeholder="Email" className={styles.formInput} />
-          <button type="submit" className={styles.submitButton}>Join Us</button>
+          <textarea placeholder="Message" className={styles.formTextarea}></textarea>
+          <button type="submit" className={styles.submitButton}>Send Message</button>
         </form>
       </section>
     </div>
