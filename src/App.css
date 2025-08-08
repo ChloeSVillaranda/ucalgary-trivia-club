@@ -6,7 +6,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgb(209, 22, 22);
   padding: 10px 20px; /* Balanced padding */
   display: flex;
   justify-content: center; /* Center items horizontally */
@@ -40,7 +40,35 @@
 }
 
 .App-footer {
-  background-color: #282c34;
+  background-color: rgb(209, 22, 22);
   color: white;
-  padding: 10px;
+  text-align: center;
+  padding: 5px 0; /* Less padding to reduce height */
+  font-size: 14px; /* Smaller font size */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Home.css */
+.welcome-text {
+color: white;
+text-shadow: 
+-1px -1px 0 #000,  
+1px -1px 0 #000,
+-1px 1px 0 #000,
+1px 1px 0 #000; /* Creates a black outline */
+}
+
+.home-background {
+  background-image: url('./assets/university-of-calgary-campus-image.jpg');
+  background-size: cover;
+  background-position: top;
+  height: 30vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

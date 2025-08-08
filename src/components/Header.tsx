@@ -1,19 +1,19 @@
+import Link from 'next/link';
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { start } from 'repl';
 
-const Header: React.FC = () => {
+// Your existing React component - just update the Link component
+function Header() {
   return (
     <header className="App-header">
       <nav>
-        <ul className="navbar">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/leaderboard">Leaderboard</Link></li>
-          <li><Link to="/trivia">Trivia</Link></li>
-        </ul>
+        <Link href="/">Home</Link>
+        <Link href="/leaderboard">Leaderboard</Link>
+        <Link href="/trivia">Trivia</Link>
+        <Link href="/about">About</Link>
       </nav>
     </header>
   );
-};
+}
 
+export default Header;
 export default Header;

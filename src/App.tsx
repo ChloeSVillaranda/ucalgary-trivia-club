@@ -1,16 +1,22 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import './App.css';
 
-// Sample pages (You can expand them later)
-const Home = () => <h2>Welcome to the Trivia Game</h2>;
-const Leaderboard = () => <h2>Leaderboard</h2>;
-const Trivia = () => <h2>Trivia Questions</h2>;
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+
+import About from './pages/About';
+import Footer from './components/Footer';
+import Header from './components/Header';
+// Import pages from the pages folder
+import Home from './pages/Home';
+import Leaderboard from './pages/Leaderboard';
+import React from 'react';
+import Trivia from './pages/Trivia';
+
+// New About Page
 
 function App() {
   return (
+    // If you're deploying to a subdirectory, add the basename prop
+    // Example: <Router basename="/ufc-trivia-website">
     <Router>
       <div className="App">
         <Header />
@@ -19,6 +25,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/trivia" element={<Trivia />} />
+            <Route path="/about" element={<About />} />  {/* New Route */}
           </Routes>
         </main>
         <Footer />
