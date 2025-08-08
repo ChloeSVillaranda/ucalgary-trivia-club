@@ -1,0 +1,166 @@
+.homeBackground {
+  /* Add your background styles here */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcomeText {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+}
+
+.section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background-color: #ffd700;
+}
+
+.aboutSection {
+  margin-top: 2rem;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+}
+
+.aboutText {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.aboutImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.questionMarkContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.questionMark {
+  position: absolute;
+  font-size: 6rem;
+  color: #ffd700;
+  opacity: 0.8;
+}
+
+.q1 {
+  top: 0;
+  left: 20%;
+  animation: float 5s ease-in-out infinite;
+}
+
+.q2 {
+  top: 30%;
+  left: 60%;
+  font-size: 8rem;
+  animation: float 7s ease-in-out infinite 1s;
+}
+
+.q3 {
+  top: 60%;
+  left: 10%;
+  font-size: 5rem;
+  animation: float 6s ease-in-out infinite 0.5s;
+}
+
+.contactSection {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 4rem;
+  margin: 5rem auto;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.formInput {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.submitButton {
+  background-color: #ffd700;
+  color: #333;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #e6c200;
+  transform: translateY(-2px);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .questionMarkContainer {
+    width: 200px;
+    height: 200px;
+  }
+}
