@@ -52,23 +52,43 @@
 
 /* Home.css */
 .welcome-text {
-color: white;
-text-shadow: 
--1px -1px 0 #000,  
-1px -1px 0 #000,
--1px 1px 0 #000,
-1px 1px 0 #000; /* Creates a black outline */
+  color: white;
+  text-shadow: 
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000; /* Creates a black outline */
 }
 
 .home-background {
-  background-image: url('./assets/university-of-calgary-campus-image.jpg');
+  /* Update background properties */
+  background-color: transparent; /* Remove fallback color */
+  /* Update path - ensure image exists at this location */
+  background-image: url('/assets/University-of-Calgary.jpeg');
   background-size: cover;
-  background-position: top;
-  height: 30vh;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-position: center 70%; /* Adjusted to focus more on the sign and less on grass */
   background-repeat: no-repeat;
+  height: 50vh; /* Increased height to show more of the image */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 0; /* Ensure proper stacking */
+}
+
+.home-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Reduced opacity to see image better */
+  z-index: 1;
+}
+
+.welcome-text {
+  position: relative;
+  z-index: 2; /* Place text above the overlay */
 }
