@@ -5,7 +5,8 @@
 }
 
 .banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/banner-bg.jpg');
+  /* Update image path to use the University of Calgary image you've shared */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/University-of-Calgary.jpeg');
   background-size: cover;
   background-position: center;
   height: 70vh;
