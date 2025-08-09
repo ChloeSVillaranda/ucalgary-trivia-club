@@ -40,7 +40,7 @@ function Header() {
         {/* Scroll indicator with multiple chevrons */}
         <div
           className={styles.scrollIndicator}
-          onClick={() => scrollToSection('home')}
+          onClick={() => scrollToSection('about')}
         >
           <div className={styles.chevronsContainer}>
             <div className={styles.scrollChevron}>
@@ -64,9 +64,6 @@ function Header() {
 
       <nav className={styles.navigation}>
         <div className={styles.navContainer}>
-          <a onClick={() => scrollToSection('home')} className={styles.navLink}>
-            Home
-          </a>
           <a onClick={() => scrollToSection('about')} className={styles.navLink}>
             About
           </a>
