@@ -20,7 +20,7 @@
   justify-content: center;
   text-align: center;
   color: white;
-  position: relative;
+  position: relative; /* Ensure this is set for absolute positioning */
   overflow: hidden;
   padding-top: 15vh;
 }
@@ -35,6 +35,54 @@
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
   margin-top: -5vh;
+}
+
+/* Scroll down indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+  padding: 15px 0;
+}
+
+.chevronsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.scrollChevron {
+  width: 150px; /* Increased from 100px */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2s infinite;
+}
+
+.scrollChevron:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.scrollChevron:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.scrollChevron svg {
+  width: 100%;
+  height: 30px;
+  transform: scaleX(1.5); /* This stretches the SVG horizontally */
+  fill: #ffd700; /* Yellow/gold color */
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
 
 .title {
@@ -126,6 +174,18 @@
   to { 
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
   }
 }
 
