@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const ContactSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -67,12 +69,7 @@ const ContactSection: React.FC = () => {
           
           <div className={styles.contactDetail}>
             <i className={styles.icon}>📧</i>
-            <p>ufctriviaclub@ucalgary.ca</p>
-          </div>
-          
-          <div className={styles.contactDetail}>
-            <i className={styles.icon}>📱</i>
-            <p>+1 (403) 555-1234</p>
+            <p>trebeksrejects@gmail.com</p>
           </div>
           
           <div className={styles.contactDetail}>
@@ -80,15 +77,16 @@ const ContactSection: React.FC = () => {
             <p>2500 University Drive NW, Calgary, AB</p>
           </div>
           
+          <h4 className={styles.socialTitle}>Our social medias</h4>
           <div className={styles.socialLinks}>
-            <a href="#" className={styles.socialLink}>
-              <i className={styles.icon}>📘</i> {/* Facebook */}
+            <a href="#" className={styles.socialLink} aria-label="Facebook">
+              <FontAwesomeIcon icon={faFacebookF} />
             </a>
-            <a href="#" className={styles.socialLink}>
-              <i className={styles.icon}>📷</i> {/* Instagram */}
+            <a href="#" className={styles.socialLink} aria-label="Instagram">
+              <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="#" className={styles.socialLink}>
-              <i className={styles.icon}>🐦</i> {/* Twitter */}
+            <a href="#" className={styles.socialLink} aria-label="Twitter">
+              <FontAwesomeIcon icon={faTwitter} />
             </a>
           </div>
         </div>
