@@ -1,11 +1,12 @@
-import '../src/App.css';
+import '../styles/globals.css';
 
 import React, { useEffect } from 'react';
 
 import type { AppProps } from 'next/app';
-import Footer from '../src/components/Footer';
-import Header from '../src/components/Header';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
+// Using Next.js for improved SEO, performance, and routing capabilities
 function MyApp({ Component, pageProps }: AppProps) {
   // Unregister any service workers on mount
   useEffect(() => {

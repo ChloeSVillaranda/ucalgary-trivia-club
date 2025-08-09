@@ -16,6 +16,9 @@
 
 .container {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .section {
@@ -103,6 +106,45 @@
   transform: translateY(-2px);
 }
 
+/* About Section */
+.aboutSection {
+  margin-top: 2rem;
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+}
+
+.aboutText {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.aboutImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.imagePlaceholder {
+  background-color: #f0f0f0;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
 /* Trivia Section */
 .triviaSection {
   background-color: #f9f9f9;
@@ -151,63 +193,6 @@
   background-color: #e6c200;
 }
 
-/* About Section */
-.aboutSection {
-  margin-top: 2rem;
-}
-
-.aboutContent {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 4rem;
-}
-
-.aboutText {
-  flex: 1;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.aboutImage {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.questionMarkContainer {
-  position: relative;
-  width: 300px;
-  height: 300px;
-}
-
-.questionMark {
-  position: absolute;
-  font-size: 6rem;
-  color: #ffd700;
-  opacity: 0.8;
-}
-
-.q1 {
-  top: 0;
-  left: 20%;
-  animation: float 5s ease-in-out infinite;
-}
-
-.q2 {
-  top: 30%;
-  left: 60%;
-  font-size: 8rem;
-  animation: float 7s ease-in-out infinite 1s;
-}
-
-.q3 {
-  top: 60%;
-  left: 10%;
-  font-size: 5rem;
-  animation: float 6s ease-in-out infinite 0.5s;
-}
-
 /* Contact Section */
 .contactSection {
   background-color: #f9f9f9;
@@ -216,24 +201,24 @@
   margin: 5rem auto;
 }
 
-.contactForm {
+.contactContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  max-width: 500px;
-  margin: 0 auto;
+  gap: 40px;
 }
 
-.formInput, .formTextarea {
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
+.contactInfo, .contactForm {
+  flex: 1;
 }
 
-.formTextarea {
-  min-height: 150px;
-  resize: vertical;
+.contactDetail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
 }
 
 .submitButton {
@@ -278,3 +263,17 @@
     align-items: center;
   }
 }
+  .aboutContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .questionMarkContainer {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .triviaContainer {
+    flex-direction: column;
+    align-items: center;
+  }

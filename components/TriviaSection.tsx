@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import styles from './Home.module.css';
+import styles from '../styles/Home.module.css';
 
 const TriviaSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);

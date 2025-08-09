@@ -1,6 +1,17 @@
 import React from 'react';
-import Home from '../src/LandingPage';
+import HomeSection from '../components/HomeSection';
+import TriviaSection from '../components/TriviaSection';
+import AboutSection from '../components/AboutSection';
+import ContactSection from '../components/ContactSection';
+import styles from '../styles/Home.module.css';
 
-export default function HomePage() {
-  return <Home />;
+export default function Home() {
+  return (
+    <div className={styles.container}>
+      <HomeSection />
+      <TriviaSection />
+      <AboutSection />
+      <ContactSection />
+    </div>
+  );
 }

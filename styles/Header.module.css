@@ -75,7 +75,7 @@
   padding: 0.5rem 0;
   position: relative;
   transition: color 0.3s ease;
-  cursor: pointer; /* Add cursor pointer for better UX */
+  cursor: pointer;
 }
 
 .navLink:after {
