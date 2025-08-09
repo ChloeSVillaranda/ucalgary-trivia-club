@@ -37,12 +37,8 @@
 }
 
 .banner {
-  /* Ensure banner takes full width */
-  width: 100%;
-  /* Set black background that shows if image doesn't cover */
-  background-color: #000;
   /* Add overlay similar to example image */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/UCalgary_Common_Space.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url('/assets/UCalgary_Common_Space.jpg');
   background-size: cover;
   background-position: center;
   /* Increase height to match example */
@@ -55,18 +51,18 @@
   position: relative; /* Ensure this is set for absolute positioning */
   overflow: hidden;
   padding-top: 15vh;
+  font-family: 'Montserrat', sans-serif; /* Adding modern sans-serif font */
 }
 
 .bannerContent {
   animation: fadeIn 1.2s ease-out;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.75);
-  padding: 2rem 4rem;
   width: 85%;
   max-width: 900px;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-  margin-top: -5vh;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.6); /* Added semi-transparent dark background */
+  padding: 2.5rem 1rem; /* Adding some padding */
 }
 
 /* Scroll down indicator */
@@ -118,26 +114,32 @@
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 4.2rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 1px #000;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   animation: slideUp 1s ease-out;
+  text-transform: uppercase; /* Make text uppercase for stronger presence */
+  line-height: 1.1;
 }
 
 .subtitle {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 300;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 2px;
+  font-family: 'Roboto', sans-serif; /* Complementary font */
 }
 
 .tagline {
-  font-size: 1.5rem;
-  margin-top: 1rem;
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   animation: slideUp 1s ease-out 0.3s backwards;
   font-weight: 500;
+  letter-spacing: 1px;
+  color: #ffd700; /* Gold color for the tagline */
 }
 
 .navContainer {

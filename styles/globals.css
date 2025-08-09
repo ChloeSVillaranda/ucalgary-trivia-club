@@ -1,11 +1,16 @@
 /* Base styles */
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  background: linear-gradient(145deg, #f0f0f0, #e6e6e6);
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
 }
 
 code {
@@ -46,3 +51,36 @@ code {
   bottom: 0;
   width: 100%;
 }
+
+.particles-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.content-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px 0;
+}
+
+/* For CSS custom properties in the animation */
+:root {
+  --rand-x: 1;
+  --rand-y: 1;
+}
+
+/* Add any other global styles you need */

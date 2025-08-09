@@ -1,0 +1,77 @@
+.particleContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background-color: #d11616;
+  border-radius: 50%;
+  opacity: 0.4;
+  pointer-events: none;
+  animation: floatAndFade linear infinite;
+}
+
+.withParticles {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1;
+  padding: 0 15px;
+}
+
+@keyframes floatAndFade {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px);
+    opacity: 0;
+  }
+}
+
+/* Make container responsive */
+@media (max-width: 1400px) {
+  .withParticles {
+    margin: 0 40px;
+    width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 768px) {
+  .withParticles {
+    margin: 0 20px;
+    width: calc(100% - 40px);
+  }
+}
+@media (max-width: 1400px) {
+  .withParticles {
+    margin: 0 40px;
+    width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 768px) {
+  .withParticles {
+    margin: 0 20px;
+    width: calc(100% - 40px);
+  }
+}

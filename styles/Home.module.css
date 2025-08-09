@@ -11,6 +11,8 @@
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease, transform 1s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .section.visible {

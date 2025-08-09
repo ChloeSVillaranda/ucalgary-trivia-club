@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import Image from 'next/image';
 import memberStyles from '../styles/MembershipSection.module.css';
 import styles from '../styles/Home.module.css';
 
@@ -42,19 +41,16 @@ const MembershipSection: React.FC = () => {
     {
       name: "John Doe",
       position: "President",
-      imageUrl: "/images/members/placeholder.jpg",
       bio: "UFC enthusiast since 2010, specializing in fighter statistics."
     },
     {
       name: "Jane Smith",
       position: "Vice President",
-      imageUrl: "/images/members/placeholder.jpg",
       bio: "MMA analyst and event coordinator."
     },
     {
       name: "Mike Johnson",
       position: "Treasurer",
-      imageUrl: "/images/members/placeholder.jpg",
       bio: "Finance major with a passion for UFC history."
     },
   ];
@@ -153,21 +149,12 @@ const MembershipSection: React.FC = () => {
               className={memberStyles.memberCard}
             >
               <div className={memberStyles.memberImageContainer}>
-                {member.imageUrl ? (
-                  <Image 
-                    src={member.imageUrl} 
-                    alt={member.name}
-                    width={100}
-                    height={100}
-                    style={{ objectFit: 'cover' }}
-                  />
-                ) : (
-                  <div className={memberStyles.memberPlaceholder}>
-                    <span>
-                      {member.name.charAt(0)}
-                    </span>
-                  </div>
-                )}
+                {/* Removed Image component causing fetchPriority warning */}
+                <div className={memberStyles.memberPlaceholder}>
+                  <span>
+                    {member.name.charAt(0)}
+                  </span>
+                </div>
               </div>
               <h3>{member.name}</h3>
               <p className={memberStyles.memberPosition}>{member.position}</p>

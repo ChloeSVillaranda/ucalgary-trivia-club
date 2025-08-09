@@ -17,13 +17,20 @@ function Header() {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 70, // Offset for the sticky header
-        behavior: 'smooth',
-      });
-    }
+    // Small delay to ensure the DOM is fully rendered
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerHeight = 70; // Height of the sticky header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
+    }, 100);
   };
 
   return (
@@ -34,6 +41,8 @@ function Header() {
             <span className={styles.subtitle}>University of Calgary</span>
             <br />TRIVIA CLUB
           </h1>
+          <p>UCTC</p>
+          <p>The only club on campus dedicated to trivia.</p>
           <p className={styles.tagline}>Brainy Nights, Dino Delights</p>
         </div>
 
@@ -72,6 +81,9 @@ function Header() {
           </a>
           <a onClick={() => scrollToSection('trivia')} className={styles.navLink}>
             Trivia
+          </a>
+          <a onClick={() => scrollToSection('faq')} className={styles.navLink}>
+            FAQ
           </a>
           <a onClick={() => scrollToSection('contact')} className={styles.navLink}>
             Contact
