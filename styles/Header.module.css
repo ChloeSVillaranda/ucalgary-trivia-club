@@ -42,7 +42,7 @@
   /* Set black background that shows if image doesn't cover */
   background-color: #000;
   /* Add overlay similar to example image */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/University-of-Calgary.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/UCalgary_Common_Space.jpg');
   background-size: cover;
   background-position: center;
   /* Increase height to match example */
