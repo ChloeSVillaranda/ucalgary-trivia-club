@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import styles from '../styles/Header.module.css';
 
 function Header() {
@@ -66,11 +67,14 @@ function Header() {
           <a onClick={() => scrollToSection('home')} className={styles.navLink}>
             Home
           </a>
-          <a onClick={() => scrollToSection('trivia')} className={styles.navLink}>
-            Trivia
-          </a>
           <a onClick={() => scrollToSection('about')} className={styles.navLink}>
             About
+          </a>
+          <a onClick={() => scrollToSection('membership')} className={styles.navLink}>
+            Membership
+          </a>
+          <a onClick={() => scrollToSection('trivia')} className={styles.navLink}>
+            Trivia
           </a>
           <a onClick={() => scrollToSection('contact')} className={styles.navLink}>
             Contact

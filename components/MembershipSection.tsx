@@ -1,0 +1,182 @@
+import React, { useEffect, useRef, useState } from 'react';
+
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+
+interface Member {
+  name: string;
+  position: string;
+  imageUrl?: string;
+  bio?: string;
+}
+
+const MembershipSection: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Example data for current members
+  const currentMembers: Member[] = [
+    {
+      name: "John Doe",
+      position: "President",
+      imageUrl: "/images/members/placeholder.jpg",
+      bio: "UFC enthusiast since 2010, specializing in fighter statistics."
+    },
+    {
+      name: "Jane Smith",
+      position: "Vice President",
+      imageUrl: "/images/members/placeholder.jpg",
+      bio: "MMA analyst and event coordinator."
+    },
+    {
+      name: "Mike Johnson",
+      position: "Treasurer",
+      imageUrl: "/images/members/placeholder.jpg",
+      bio: "Finance major with a passion for UFC history."
+    },
+  ];
+
+  return (
+    <section 
+      id="membership" 
+      ref={sectionRef}
+      className={`${styles.section} ${isVisible ? styles.visible : ''}`}
+    >
+      <h2 className={styles.sectionTitle}>Membership</h2>
+      
+      {/* How to Join Section */}
+      <div className={styles.aboutContainer}>
+        <h3 className={styles.sectionTitle}>How to Join</h3>
+        
+        <div className={styles.triviaContainer}>
+          {/* Member Card */}
+          <div className={styles.triviaCard}>
+            <h3>Become a Member</h3>
+            <p>
+              Join our community of UFC enthusiasts! As a member, you'll get access to:
+            </p>
+            <ul className={styles.bulletList}>
+              <li>Weekly trivia events</li>
+              <li>Exclusive watch parties</li>
+              <li>Discounted merchandise</li>
+              <li>Connect with fellow UFC fans</li>
+            </ul>
+            <p>
+              Membership is open to all students. Annual dues are $20.
+            </p>
+            <button className={styles.triviaButton}>
+              Apply Now
+            </button>
+          </div>
+          
+          {/* Executive Card */}
+          <div className={styles.triviaCard}>
+            <h3>Executive Positions</h3>
+            <p>
+              Want to take a leadership role? Executive members organize events, manage finances, and guide the club's direction.
+            </p>
+            <p className={styles.listHeading}>
+              Executive positions include:
+            </p>
+            <ul className={styles.bulletList}>
+              <li>President</li>
+              <li>Vice President</li>
+              <li>Treasurer</li>
+              <li>Secretary</li>
+              <li>Events Coordinator</li>
+            </ul>
+            <p>
+              Elections are held annually in April.
+            </p>
+            <button className={styles.triviaButton}>
+              Learn More
+            </button>
+          </div>
+          
+          {/* Other Positions Card */}
+          <div className={styles.triviaCard}>
+            <h3>Other Opportunities</h3>
+            <p>
+              Not ready for executive commitment? We have other ways to get involved:
+            </p>
+            <ul className={styles.bulletList}>
+              <li>Trivia Writer</li>
+              <li>Social Media Manager</li>
+              <li>Event Staff</li>
+              <li>Content Creator</li>
+              <li>Web Developer</li>
+            </ul>
+            <p>
+              These positions are filled on an as-needed basis.
+            </p>
+            <button className={styles.triviaButton}>
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Current Members Section */}
+      <div className={styles.aboutContainer}>
+        <h3 className={styles.sectionTitle}>Current Members</h3>
+        <p style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          Meet the team behind our UFC Trivia community
+        </p>
+        
+        <div className={styles.triviaContainer}>
+          {currentMembers.map((member, index) => (
+            <div 
+              key={index}
+              className={styles.triviaCard}
+            >
+              <div style={{ width: '100px', height: '100px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1rem auto', position: 'relative' }}>
+                {member.imageUrl ? (
+                  <Image 
+                    src={member.imageUrl} 
+                    alt={member.name}
+                    width={100}
+                    height={100}
+                    style={{ objectFit: 'cover' }}
+                  />
+                ) : (
+                  <div style={{ width: '100%', height: '100%', backgroundColor: '#f2f2f2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <span style={{ fontSize: '2rem', color: '#666' }}>
+                      {member.name.charAt(0)}
+                    </span>
+                  </div>
+                )}
+              </div>
+              <h3>{member.name}</h3>
+              <p style={{ color: '#d11616', fontWeight: '500', marginBottom: '0.5rem' }}>{member.position}</p>
+              {member.bio && <p>{member.bio}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MembershipSection;
