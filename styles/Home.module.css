@@ -8,8 +8,8 @@
 .section {
   padding: 80px 20px;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(50px); /* Increased from 20px for more noticeable effect */
+  transition: opacity 0.8s ease, transform 1s ease;
 }
 
 .section.visible {
@@ -294,4 +294,105 @@
 .secondaryButton:hover {
   background-color: #d11616;
   color: white;
+}
+
+/* Enhanced section animations */
+.section {
+  /* ...existing code... */
+  opacity: 0;
+  transform: translateY(50px); /* Increased from 20px for more noticeable effect */
+  transition: opacity 0.8s ease, transform 1s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Content animations for staggered effect */
+.section.visible h2 {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.section.visible p,
+.section.visible h3 {
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.section.visible .triviaCard:nth-child(1),
+.section.visible .contactDetail:nth-child(1) {
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.section.visible .triviaCard:nth-child(2),
+.section.visible .contactDetail:nth-child(2) {
+  animation: fadeInUp 0.8s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.section.visible .triviaCard:nth-child(3),
+.section.visible .contactDetail:nth-child(3) {
+  animation: fadeInUp 0.8s ease-out 0.7s forwards;
+  opacity: 0;
+}
+
+.section.visible .primaryButton,
+.section.visible .triviaButton {
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.section.visible .secondaryButton {
+  animation: fadeInUp 0.8s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+.section.visible .aboutImage {
+  animation: fadeInRight 1s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.section.visible .formGroup:nth-child(1) {
+  animation: fadeInUp 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.section.visible .formGroup:nth-child(2) {
+  animation: fadeInUp 0.6s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.section.visible .formGroup:nth-child(3) {
+  animation: fadeInUp 0.6s ease-out 0.7s forwards;
+  opacity: 0;
+}
+
+.section.visible .submitButton {
+  animation: fadeInUp 0.6s ease-out 0.9s forwards;
+  opacity: 0;
+}
+
+/* Define animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
