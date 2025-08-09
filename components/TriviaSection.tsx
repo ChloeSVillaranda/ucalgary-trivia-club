@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
+import triviaStyles from '../styles/TriviaSection.module.css';
 
 const TriviaSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -26,23 +27,23 @@ const TriviaSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="trivia" ref={sectionRef} className={`${styles.section} ${styles.triviaSection}`}>
+    <section id="trivia" ref={sectionRef} className={`${styles.section} ${triviaStyles.triviaSection}`}>
       <h2 className={styles.sectionTitle}>Trivia</h2>
-      <div className={styles.triviaContainer}>
-        <div className={styles.triviaCard}>
+      <div className={triviaStyles.triviaContainer}>
+        <div className={triviaStyles.triviaCard}>
           <h3>Fighter Trivia</h3>
           <p>Test your knowledge about UFC fighters, their records, and achievements.</p>
-          <button className={styles.triviaButton}>Start</button>
+          <button className={triviaStyles.triviaButton}>Start</button>
         </div>
-        <div className={styles.triviaCard}>
+        <div className={triviaStyles.triviaCard}>
           <h3>Event Trivia</h3>
           <p>Challenge yourself with questions about historic UFC events and moments.</p>
-          <button className={styles.triviaButton}>Start</button>
+          <button className={triviaStyles.triviaButton}>Start</button>
         </div>
-        <div className={styles.triviaCard}>
+        <div className={triviaStyles.triviaCard}>
           <h3>UFC History</h3>
           <p>How well do you know the history and evolution of the UFC?</p>
-          <button className={styles.triviaButton}>Start</button>
+          <button className={triviaStyles.triviaButton}>Start</button>
         </div>
       </div>
     </section>

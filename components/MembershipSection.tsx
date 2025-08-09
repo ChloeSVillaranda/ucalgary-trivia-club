@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
+import memberStyles from '../styles/MembershipSection.module.css';
 import styles from '../styles/Home.module.css';
 
 interface Member {
@@ -62,17 +63,17 @@ const MembershipSection: React.FC = () => {
     <section 
       id="membership" 
       ref={sectionRef}
-      className={`${styles.section} ${isVisible ? styles.visible : ''}`}
+      className={`${styles.section} ${memberStyles.membershipSection} ${isVisible ? styles.visible : ''}`}
     >
       <h2 className={styles.sectionTitle}>Membership</h2>
       
       {/* How to Join Section */}
-      <div className={styles.aboutContainer}>
+      <div className={memberStyles.memberContainer}>
         <h3 className={styles.sectionTitle}>How to Join</h3>
         
-        <div className={styles.triviaContainer}>
+        <div className={memberStyles.membersContainer}>
           {/* Member Card */}
-          <div className={styles.triviaCard}>
+          <div className={memberStyles.memberCard}>
             <h3>Become a Member</h3>
             <p>
               Join our community of UFC enthusiasts! As a member, you'll get access to:
@@ -86,13 +87,13 @@ const MembershipSection: React.FC = () => {
             <p>
               Membership is open to all students. Annual dues are $20.
             </p>
-            <button className={styles.triviaButton}>
+            <button className={styles.primaryButton}>
               Apply Now
             </button>
           </div>
           
           {/* Executive Card */}
-          <div className={styles.triviaCard}>
+          <div className={memberStyles.memberCard}>
             <h3>Executive Positions</h3>
             <p>
               Want to take a leadership role? Executive members organize events, manage finances, and guide the club's direction.
@@ -110,13 +111,13 @@ const MembershipSection: React.FC = () => {
             <p>
               Elections are held annually in April.
             </p>
-            <button className={styles.triviaButton}>
+            <button className={styles.primaryButton}>
               Learn More
             </button>
           </div>
           
           {/* Other Positions Card */}
-          <div className={styles.triviaCard}>
+          <div className={memberStyles.memberCard}>
             <h3>Other Opportunities</h3>
             <p>
               Not ready for executive commitment? We have other ways to get involved:
@@ -131,7 +132,7 @@ const MembershipSection: React.FC = () => {
             <p>
               These positions are filled on an as-needed basis.
             </p>
-            <button className={styles.triviaButton}>
+            <button className={styles.primaryButton}>
               Contact Us
             </button>
           </div>
@@ -139,19 +140,19 @@ const MembershipSection: React.FC = () => {
       </div>
       
       {/* Current Members Section */}
-      <div className={styles.aboutContainer}>
+      <div className={memberStyles.memberContainer}>
         <h3 className={styles.sectionTitle}>Current Members</h3>
-        <p style={{ textAlign: 'center', marginBottom: '2rem' }}>
+        <p className={memberStyles.memberIntro}>
           Meet the team behind our UFC Trivia community
         </p>
         
-        <div className={styles.triviaContainer}>
+        <div className={memberStyles.membersContainer}>
           {currentMembers.map((member, index) => (
             <div 
               key={index}
-              className={styles.triviaCard}
+              className={memberStyles.memberCard}
             >
-              <div style={{ width: '100px', height: '100px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1rem auto', position: 'relative' }}>
+              <div className={memberStyles.memberImageContainer}>
                 {member.imageUrl ? (
                   <Image 
                     src={member.imageUrl} 
@@ -161,15 +162,15 @@ const MembershipSection: React.FC = () => {
                     style={{ objectFit: 'cover' }}
                   />
                 ) : (
-                  <div style={{ width: '100%', height: '100%', backgroundColor: '#f2f2f2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ fontSize: '2rem', color: '#666' }}>
+                  <div className={memberStyles.memberPlaceholder}>
+                    <span>
                       {member.name.charAt(0)}
                     </span>
                   </div>
                 )}
               </div>
               <h3>{member.name}</h3>
-              <p style={{ color: '#d11616', fontWeight: '500', marginBottom: '0.5rem' }}>{member.position}</p>
+              <p className={memberStyles.memberPosition}>{member.position}</p>
               {member.bio && <p>{member.bio}</p>}
             </div>
           ))}

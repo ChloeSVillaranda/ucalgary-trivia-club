@@ -1,0 +1,61 @@
+.triviaSection {
+  background-color: #f9f9f9;
+}
+
+.triviaContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.triviaCard {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.triviaCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.triviaCard h3 {
+  color: #d11616;
+  margin-bottom: 15px;
+}
+
+.triviaButton {
+  background-color: #d11616;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.triviaButton:hover {
+  background-color: #a21212;
+}
+
+/* Animation for staggered card effect */
+.section.visible .triviaCard:nth-child(1) {
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.section.visible .triviaCard:nth-child(2) {
+  animation: fadeInUp 0.8s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.section.visible .triviaCard:nth-child(3) {
+  animation: fadeInUp 0.8s ease-out 0.7s forwards;
+  opacity: 0;
+}

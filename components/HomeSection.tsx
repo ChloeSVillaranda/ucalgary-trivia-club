@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+
+import homeStyles from '../styles/HomeSection.module.css';
 import styles from '../styles/Home.module.css';
 
 const HomeSection: React.FC = () => {
@@ -26,15 +28,15 @@ const HomeSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" ref={sectionRef} className={`${styles.section} ${styles.homeSection}`}>
-      <div className={styles.heroContent}>
-        <h1 className={styles.mainTitle}>University of Calgary Trivia Club</h1>
-        <h2 className={styles.subtitle}>UCTC</h2>
-        <p className={styles.heroParagraph}>
+    <section id="home" ref={sectionRef} className={`${styles.section} ${homeStyles.homeSection} ${styles.visible}`}>
+      <div className={homeStyles.heroContent}>
+        <h1 className={homeStyles.mainTitle}>University of Calgary Trivia Club</h1>
+        <h2 className={homeStyles.subtitle}>UCTC</h2>
+        <p className={homeStyles.heroParagraph}>
           The only club on campus dedicated to Trivia.
         </p>
       </div>
-      <div className={styles.heroImage}>
+      <div className={homeStyles.heroImage}>
         {/* If you have a hero image, add it here */}
       </div>
     </section>

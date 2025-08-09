@@ -1,7 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react';
-import styles from '../styles/Home.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useRef, useState } from 'react';
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import contactStyles from '../styles/ContactSection.module.css';
+import styles from '../styles/Home.module.css';
 
 const ContactSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -60,48 +62,48 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className={`${styles.section} ${styles.contactSection}`}>
+    <section id="contact" ref={sectionRef} className={`${styles.section} ${contactStyles.contactSection}`}>
       <h2 className={styles.sectionTitle}>Contact Us</h2>
-      <div className={styles.contactContainer}>
-        <div className={styles.contactInfo}>
+      <div className={contactStyles.contactContainer}>
+        <div className={contactStyles.contactInfo}>
           <h3>Get In Touch</h3>
           <p>Have questions about our trivia nights or want to join the club? Reach out to us!</p>
           
-          <div className={styles.contactDetail}>
-            <i className={styles.icon}>📧</i>
+          <div className={contactStyles.contactDetail}>
+            <i className={contactStyles.icon}>📧</i>
             <p>trebeksrejects@gmail.com</p>
           </div>
           
-          <div className={styles.contactDetail}>
-            <i className={styles.icon}>📍</i>
+          <div className={contactStyles.contactDetail}>
+            <i className={contactStyles.icon}>📍</i>
             <p>2500 University Drive NW, Calgary, AB</p>
           </div>
           
-          <h4 className={styles.socialTitle}>Our social medias</h4>
-          <div className={styles.socialLinks}>
-            <a href="#" className={styles.socialLink} aria-label="Facebook">
+          <h4 className={contactStyles.socialTitle}>Our social medias</h4>
+          <div className={contactStyles.socialLinks}>
+            <a href="#" className={contactStyles.socialLink} aria-label="Facebook">
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
-            <a href="#" className={styles.socialLink} aria-label="Instagram">
+            <a href="#" className={contactStyles.socialLink} aria-label="Instagram">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="#" className={styles.socialLink} aria-label="Twitter">
+            <a href="#" className={contactStyles.socialLink} aria-label="Twitter">
               <FontAwesomeIcon icon={faTwitter} />
             </a>
           </div>
         </div>
         
-        <div className={styles.contactForm}>
+        <div className={contactStyles.contactForm}>
           <h3>Send us a Message</h3>
           
           {submitMessage && (
-            <div className={styles.formMessage}>
+            <div className={contactStyles.formMessage}>
               {submitMessage}
             </div>
           )}
           
           <form onSubmit={handleSubmit}>
-            <div className={styles.formGroup}>
+            <div className={contactStyles.formGroup}>
               <label htmlFor="name">Name</label>
               <input
                 type="text"
@@ -113,7 +115,7 @@ const ContactSection: React.FC = () => {
               />
             </div>
             
-            <div className={styles.formGroup}>
+            <div className={contactStyles.formGroup}>
               <label htmlFor="email">Email</label>
               <input
                 type="email"
@@ -125,7 +127,7 @@ const ContactSection: React.FC = () => {
               />
             </div>
             
-            <div className={styles.formGroup}>
+            <div className={contactStyles.formGroup}>
               <label htmlFor="message">Message</label>
               <textarea
                 id="message"
@@ -139,7 +141,7 @@ const ContactSection: React.FC = () => {
             
             <button 
               type="submit" 
-              className={styles.submitButton}
+              className={contactStyles.submitButton}
               disabled={isSubmitting}
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
