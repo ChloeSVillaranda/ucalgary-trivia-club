@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faDiscord, faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import contactStyles from '../styles/ContactSection.module.css';
@@ -87,8 +87,8 @@ const ContactSection: React.FC = () => {
             <a href="#" className={contactStyles.socialLink} aria-label="Instagram">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="#" className={contactStyles.socialLink} aria-label="Twitter">
-              <FontAwesomeIcon icon={faTwitter} />
+            <a href="#" className={contactStyles.socialLink} aria-label="Discord">
+              <FontAwesomeIcon icon={faDiscord} />
             </a>
           </div>
         </div>

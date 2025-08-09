@@ -69,7 +69,7 @@
 }
 
 .socialLink:nth-child(3) {
-  color: #1DA1F2; /* Twitter blue */
+  color: #5865F2; /* Discord color */
 }
 
 .socialLink:hover {
@@ -89,7 +89,7 @@
 }
 
 .socialLink:nth-child(3):hover {
-  background-color: #1DA1F2;
+  background-color: #5865F2;
   color: white;
 }
 
