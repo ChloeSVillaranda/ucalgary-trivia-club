@@ -4,6 +4,38 @@
   transition: all 0.4s ease;
 }
 
+/* Keep the navigation in normal flow initially */
+.navigation {
+  background-color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Initially not sticky */
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+/* When scrolled, make the navigation sticky */
+.scrolled .navigation {
+  position: fixed; /* Change to fixed when scrolled */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 .banner {
   /* Ensure banner takes full width */
   width: 100%;
@@ -106,21 +138,6 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   animation: slideUp 1s ease-out 0.3s backwards;
   font-weight: 500;
-}
-
-.navigation {
-  background-color: #fff;
-  padding: 1rem 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  transition: all 0.3s ease;
-}
-
-.scrolled .navigation {
-  padding: 0.5rem 0;
-  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .navContainer {
