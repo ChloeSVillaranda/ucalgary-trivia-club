@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
+import Image from 'next/image';
 import aboutStyles from '../styles/AboutSection.module.css';
 import styles from '../styles/Home.module.css';
 
@@ -63,9 +64,14 @@ const AboutSection: React.FC = () => {
           
         </div>
         <div className={aboutStyles.aboutImage}>
-          <div className={aboutStyles.imagePlaceholder}>
-            <p>Club Photo</p>
-          </div>
+          <Image 
+            src="/assets/RexTriviaMascot.png"
+            alt="Rex - Trivia Club Mascot" 
+            width={300}
+            height={300}
+            className={aboutStyles.mascotImage}
+            priority
+          />
         </div>
       </div>
     </section>

@@ -25,15 +25,15 @@
 
 .aboutImage {
   flex: 1;
-}
-
-.imagePlaceholder {
-  background-color: #f0f0f0;
-  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+}
+
+.mascotImage {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
 }
 
 @media (min-width: 768px) {
