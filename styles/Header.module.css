@@ -5,30 +5,43 @@
 }
 
 .banner {
-  /* Update image path to use the University of Calgary image you've shared */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/University-of-Calgary.jpeg');
+  /* Ensure banner takes full width */
+  width: 100%;
+  /* Set black background that shows if image doesn't cover */
+  background-color: #000;
+  /* Add overlay similar to example image */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/University-of-Calgary.jpeg');
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  /* Increase height to match example */
+  height: 80vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
   color: white;
   position: relative;
   overflow: hidden;
+  padding-top: 15vh;
 }
 
 .bannerContent {
   animation: fadeIn 1.2s ease-out;
   z-index: 2;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 2rem 4rem;
+  width: 85%;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  margin-top: -5vh;
 }
 
 .title {
   font-size: 4rem;
-  font-weight: bold;
+  font-weight: 800;
   margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 1px #000;
   letter-spacing: 2px;
   animation: slideUp 1s ease-out;
 }
@@ -36,13 +49,15 @@
 .subtitle {
   font-size: 3rem;
   font-weight: 300;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .tagline {
   font-size: 1.5rem;
   margin-top: 1rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   animation: slideUp 1s ease-out 0.3s backwards;
+  font-weight: 500;
 }
 
 .navigation {

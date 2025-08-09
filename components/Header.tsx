@@ -28,10 +28,10 @@ function Header() {
       <div className={styles.banner}>
         <div className={styles.bannerContent}>
           <h1 className={styles.title}>
-            <span className={styles.subtitle}>UFC</span>
+            <span className={styles.subtitle}>University of Calgary</span>
             <br />TRIVIA CLUB
           </h1>
-          <p className={styles.tagline}>Engage Your Mind, Enrich Your Experience</p>
+          <p className={styles.tagline}>Brainy Nights, Dino Delights</p>
         </div>
       </div>
 
