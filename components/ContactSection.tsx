@@ -67,7 +67,7 @@ const ContactSection: React.FC = () => {
       <div className={contactStyles.contactContainer}>
         <div className={contactStyles.contactInfo}>
           <h3>Get In Touch</h3>
-          <p>Have questions about our trivia nights or want to join the club? Reach out to us!</p>
+          <p>Still have questions about our club or want to join? Reach out to us!</p>
           
           <div className={contactStyles.contactDetail}>
             <i className={contactStyles.icon}>📧</i>

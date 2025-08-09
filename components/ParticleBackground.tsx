@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
 import styles from '../styles/ParticleBackground.module.css';
 
 const ParticleBackground: React.FC = () => {
-  // Pre-generate particles array to avoid regenerating on each render
-  const particles = [];
+  const [mounted, setMounted] = useState(false);
   
-  // Generate 50 particles with fixed random positions
-  for (let i = 0; i < 50; i++) {
-    const size = 2 + Math.floor(Math.random() * 5);
-    const left = Math.floor(Math.random() * 100);
-    const top = Math.floor(Math.random() * 100);
-    const delay = Math.floor(Math.random() * 5);
-    const duration = 10 + Math.floor(Math.random() * 20);
+  // Only run on client side to avoid hydration issues
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  if (!mounted) return null;
+  
+  // Generate stars with the particle.js stars preset look
+  const particles = [];
+  const particleCount = 80;
+  
+  for (let i = 0; i < particleCount; i++) {
+    // Create more varied sizes with smaller average for star-like appearance
+    const size = 1 + Math.random() * 2;
+    const left = Math.random() * 100;
+    const top = Math.random() * 100;
+    const delay = Math.random() * 10;
+    const duration = 15 + Math.random() * 30; // Slower movement for stars
+    const opacity = 0.1 + Math.random() * 0.7; // Varied opacity
     
     particles.push(
       <div 
@@ -22,6 +34,7 @@ const ParticleBackground: React.FC = () => {
           top: `${top}%`,
           width: `${size}px`,
           height: `${size}px`,
+          opacity: opacity,
           animationDelay: `${delay}s`,
           animationDuration: `${duration}s`
         }}
@@ -29,7 +42,12 @@ const ParticleBackground: React.FC = () => {
     );
   }
 
-  return <div className={styles.particleContainer}>{particles}</div>;
+  return (
+    <div className={styles.particleContainer}>
+      {particles}
+      <div className={styles.connectingLines}></div> {/* Background element for the star effect */}
+    </div>
+  );
 };
 
 export default ParticleBackground;
