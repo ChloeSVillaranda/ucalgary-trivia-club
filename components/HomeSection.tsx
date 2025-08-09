@@ -28,16 +28,11 @@ const HomeSection: React.FC = () => {
   return (
     <section id="home" ref={sectionRef} className={`${styles.section} ${styles.homeSection}`}>
       <div className={styles.heroContent}>
-        <h1 className={styles.mainTitle}>UFC Trivia Club</h1>
-        <h2 className={styles.subtitle}>University of Calgary</h2>
+        <h1 className={styles.mainTitle}>University of Calgary Trivia Club</h1>
+        <h2 className={styles.subtitle}>UCTC</h2>
         <p className={styles.heroParagraph}>
-          Test your UFC knowledge, learn interesting facts, and connect with fellow fans.
-          Join our community of mixed martial arts enthusiasts!
+          The only club on campus dedicated to Trivia.
         </p>
-        <div className={styles.actionButtons}>
-          <button className={styles.primaryButton}>Start Trivia</button>
-          <button className={styles.secondaryButton}>Join Club</button>
-        </div>
       </div>
       <div className={styles.heroImage}>
         {/* If you have a hero image, add it here */}

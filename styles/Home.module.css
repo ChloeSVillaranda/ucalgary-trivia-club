@@ -488,3 +488,27 @@
     text-align: left; /* Keep labels left-aligned */
   }
 }
+
+/* Styled bullet list with aligned bullets */
+.bulletList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  width: fit-content; /* Make the list only as wide as its content */
+  text-align: left; /* Align text to the left within the centered container */
+}
+
+.bulletList li {
+  position: relative;
+  padding-left: 1.5em; /* Create consistent space for the bullet */
+}
+
+.bulletList li::before {
+  content: "•";
+  position: absolute;
+  left: 0.5em; /* Position all bullets at the same distance */
+}
+
+.listHeading {
+  font-weight: 600;
+}

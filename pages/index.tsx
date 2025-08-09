@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <HomeSection />
-      <TriviaSection />
       <AboutSection />
+      <TriviaSection />
       <ContactSection />
     </div>
   );

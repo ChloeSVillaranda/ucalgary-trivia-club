@@ -32,27 +32,36 @@ const AboutSection: React.FC = () => {
         <div className={styles.aboutContent}>
           <h3>Our Mission</h3>
           <p>
-            Founded in 2024 by passionate UFC enthusiasts at the University of Calgary, 
-            our club aims to bring together fans of mixed martial arts to test their knowledge, 
-            learn from each other, and celebrate the sport we love.
+            Founded in 2024 by a group of passionate trivia lovers, and officially recognized as a club in 2025, the University of Calgary Trivia Club 
+            (UCTC) is where curiosity meets community. We’re here to bring together students who love testing their knowledge, 
+            discovering new facts, and celebrating the thrill of trivia in all its forms.
           </p>
           
           <h3>What We Do</h3>
           <p>
-            We host weekly trivia nights, organize watch parties for major UFC events, 
-            and create a community where discussions about fights, fighters, and the 
-            history of the sport are encouraged and celebrated.
+            We host fun, engaging trivia events for all skill levels: from casual games where you can relax with friends, to semi-competitive 
+            matches for those who like a challenge. Whether you’re into pop culture, history, science, or the completely random, 
+            you’ll be sure to have fun.
           </p>
 
-          <h3>Join Our Community</h3>
+          <h3>What We Promote</h3>
           <p>
-            Whether you're a casual fan or a hardcore enthusiast who knows every champion 
-            in UFC history, there's a place for you in our community. We welcome members of 
-            all knowledge levels who share our passion for the sport.
+            At UCTC, it's not just about winning... 
+            <br></br>
+            It's about learning something new, making connections, and enjoying the process.
           </p>
+          
+          <p className={styles.listHeading}>We promote:</p>
+          <ul className={styles.bulletList}>
+            <li>A friendly, welcoming environment for all students</li>
+            <li>Collaboration and knowledge-sharing</li>
+            <li>School spirit with a Dino-sized roar</li>
+            <li>Opportunities to grow your skills and confidence</li>
+          </ul>
+          
         </div>
         <div className={styles.aboutImage}>
-          {/* If you have an image, add it here */}
+          {/* TODO: insert image */}
           <div className={styles.imagePlaceholder}>
             <p>Club Photo</p>
           </div>
