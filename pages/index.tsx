@@ -13,12 +13,11 @@ import styles from '../styles/Home.module.css';
 const Home: React.FC = () => {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Your Site Title</title>
+      {/* <Head>
+        <title>Your Site Titl</title>
         <meta name="description" content="Your site description" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      </Head> */}
       <ParticleBackground />
       <main className={styles.main}>
         <div className="content-container">

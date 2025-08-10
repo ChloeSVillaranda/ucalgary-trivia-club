@@ -5,9 +5,14 @@
   width: 100%;
   height: 100%;
   z-index: -1;
+  background-color: white; /* White background as requested */
   overflow: hidden;
-  pointer-events: none;
-  background: linear-gradient(to bottom, #0b0b19, #152238);
+}
+
+.particleCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .particle {
