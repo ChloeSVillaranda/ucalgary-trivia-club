@@ -83,4 +83,20 @@ code {
   --rand-y: 1;
 }
 
+/* Ensure the page container properly pushes the footer down */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body, #__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 /* Add any other global styles you need */
