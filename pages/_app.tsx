@@ -1,13 +1,17 @@
 import '../styles/globals.css';
 
-import React, { useEffect } from 'react';
-
 import type { AppProps } from 'next/app';
+import { NextPageWithLayout } from '../types/page';
+import React, { ReactElement, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import MainLayout from '../components/layouts/MainLayout';
 
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
 // Using Next.js for improved SEO, performance, and routing capabilities
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const router = useRouter();
   
   // Unregister any service workers on mount
@@ -27,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   // Add layout property to Component if it doesn't have one
   const getLayout = isHomePage 
     ? (page: React.ReactElement) => <MainLayout>{page}</MainLayout>
-    : (Component as any).getLayout || ((page: React.ReactElement) => page);
+    : Component.getLayout ?? ((page: ReactElement) => page);
 
   return getLayout(<Component {...pageProps} />);
 }

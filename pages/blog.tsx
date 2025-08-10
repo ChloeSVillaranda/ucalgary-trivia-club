@@ -2,8 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import SubpageLayout from '../components/layouts/SubpageLayout';
 import styles from '../styles/Subpage.module.css';
+import { NextPageWithLayout } from '../types/page';
 
-const BlogPage: React.FC = () => {
+const BlogPage: NextPageWithLayout = () => {
   return (
     <>
       <Head>
