@@ -70,67 +70,83 @@ const MembershipSection: React.FC = () => {
         <div className={memberStyles.membersContainer}>
           {/* Member Card */}
           <div className={memberStyles.memberCard}>
-            <h3>Become a Member</h3>
-            <p>
-              Join our community of UFC enthusiasts! As a member, you'll get access to:
-            </p>
-            <ul className={styles.bulletList}>
-              <li>Weekly trivia events</li>
-              <li>Exclusive watch parties</li>
-              <li>Discounted merchandise</li>
-              <li>Connect with fellow UFC fans</li>
-            </ul>
-            <p>
-              Membership is open to all students. Annual dues are $20.
-            </p>
-            <button className={styles.primaryButton}>
-              Apply Now
-            </button>
+            <div className={memberStyles.cardContent}>
+              <h3>Become a Member</h3>
+              <p>
+                Join our community of trivia enthusiasts! 
+              </p>
+              <p>
+                As a member, you'll get access to:
+              </p>
+              <ul className={styles.bulletList}>
+                <li>Weekly small trivia meetings</li>
+                <li>Other special events and competitions</li>
+                <li>Monthly newsletters via email</li>
+                <li>Connect with fellow trivia fans</li>
+              </ul>
+              <p>
+                Membership is free and open to all students!
+              </p>
+            </div>
+            <div className={memberStyles.buttonContainer}>
+              <button className={styles.primaryButton}>
+                Apply Now
+              </button>
+            </div>
           </div>
           
           {/* Executive Card */}
           <div className={memberStyles.memberCard}>
-            <h3>Executive Positions</h3>
-            <p>
-              Want to take a leadership role? Executive members organize events, manage finances, and guide the club's direction.
-            </p>
-            <p className={styles.listHeading}>
-              Executive positions include:
-            </p>
-            <ul className={styles.bulletList}>
-              <li>President</li>
-              <li>Vice President</li>
-              <li>Treasurer</li>
-              <li>Secretary</li>
-              <li>Events Coordinator</li>
-            </ul>
-            <p>
-              Elections are held annually in April.
-            </p>
-            <button className={styles.primaryButton}>
-              Learn More
-            </button>
+            <div className={memberStyles.cardContent}>
+              <h3>Executive Positions</h3>
+              <p>
+                Interested in a leadership role? The executive team helps run events, manage finances, connect with members, and guide the club.
+              </p>
+              <p className={styles.listHeading}>
+                Executive positions include:
+              </p>
+              <ul className={styles.twoColumnList}>
+                <li>President</li>
+                <li>Vice President</li>
+                <li>Treasurer</li>
+                <li>Secretary</li>
+                <li>Events Coordinator</li>
+              </ul>
+              <p>
+                First- or second-year? Join our Junior Executive Program for leadership experience with lighter responsibilities.
+              </p>
+            </div>
+            <div className={memberStyles.buttonContainer}>
+              <button className={styles.primaryButton}>
+                Apply Now
+              </button>
+            </div>
           </div>
+
           
           {/* Other Positions Card */}
           <div className={memberStyles.memberCard}>
-            <h3>Other Opportunities</h3>
-            <p>
-              Not ready for executive commitment? We have other ways to get involved:
-            </p>
-            <ul className={styles.bulletList}>
-              <li>Trivia Writer</li>
-              <li>Social Media Manager</li>
-              <li>Event Staff</li>
-              <li>Content Creator</li>
-              <li>Web Developer</li>
-            </ul>
-            <p>
-              These positions are filled on an as-needed basis.
-            </p>
-            <button className={styles.primaryButton}>
-              Contact Us
-            </button>
+            <div className={memberStyles.cardContent}>
+              <h3>Other Opportunities</h3>
+              <p>
+                Not ready for executive commitment? We have other ways to get involved:
+              </p>
+              <ul className={styles.bulletList}>
+                <li>Trivia Writer</li>
+                <li>Social Media Manager</li>
+                <li>Event Staff</li>
+                <li>Content Creator</li>
+                <li>Web Developer</li>
+              </ul>
+              <p>
+                These positions are filled on an as-needed basis.
+              </p>
+            </div>
+            <div className={memberStyles.buttonContainer}>
+              <button className={styles.primaryButton}>
+                Apply Now
+              </button>
+            </div>
           </div>
         </div>
       </div>

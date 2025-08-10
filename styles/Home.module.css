@@ -109,6 +109,53 @@
   left: 0.5em;
 }
 
+/* Inline bullet list for horizontal display */
+.inlineBulletList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.inlineBulletList li {
+  position: relative;
+  padding: 0 12px;
+  margin: 0 5px 5px 0;
+  display: inline-block;
+}
+
+.inlineBulletList li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
 .listHeading {
   font-weight: 600;
+}
+
+/* Two-column bullet list for executive positions */
+.twoColumnList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  max-width: 100%;
+}
+
+.twoColumnList li {
+  position: relative;
+  padding-left: 1.5em;
+  text-align: left;
+}
+
+.twoColumnList li::before {
+  content: "•";
+  position: absolute;
+  left: 0.5em;
 }
