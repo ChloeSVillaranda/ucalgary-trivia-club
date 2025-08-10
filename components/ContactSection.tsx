@@ -86,25 +86,49 @@ const ContactSection: React.FC = () => {
             Stay updated on upcoming events, trivia questions, and club activities!
           </p>
           <div className={contactStyles.socialLinks}>
-            <a href="#" className={contactStyles.socialIconLink} aria-label="Instagram">
+            <a 
+              href="https://instagram.com/yourclub" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={contactStyles.socialIconLink} 
+              aria-label="Instagram"
+            >
               <div className={`${contactStyles.socialIconCircle} ${contactStyles.instagram}`}>
                 <FontAwesomeIcon icon={faInstagram} className={contactStyles.socialIcon} />
               </div>
               <span>Instagram</span>
             </a>
-            <a href="#" className={contactStyles.socialIconLink} aria-label="Discord">
+            <a 
+              href="https://discord.gg/yourinvite" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={contactStyles.socialIconLink} 
+              aria-label="Discord"
+            >
               <div className={`${contactStyles.socialIconCircle} ${contactStyles.discord}`}>
                 <FontAwesomeIcon icon={faDiscord} className={contactStyles.socialIcon} />
               </div>
               <span>Discord</span>
             </a>
-            <a href="#" className={contactStyles.socialIconLink} aria-label="GitHub">
+            <a 
+              href="https://github.com/yourrepo" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={contactStyles.socialIconLink} 
+              aria-label="GitHub"
+            >
               <div className={`${contactStyles.socialIconCircle} ${contactStyles.github}`}>
                 <FontAwesomeIcon icon={faGithub} className={contactStyles.socialIcon} />
               </div>
               <span>GitHub</span>
             </a>
-            <a href="#" className={contactStyles.socialIconLink} aria-label="TikTok">
+            <a 
+              href="https://tiktok.com/@yourclub" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={contactStyles.socialIconLink} 
+              aria-label="TikTok"
+            >
               <div className={`${contactStyles.socialIconCircle} ${contactStyles.tiktok}`}>
                 <FontAwesomeIcon icon={faTiktok} className={contactStyles.socialIcon} />
               </div>
