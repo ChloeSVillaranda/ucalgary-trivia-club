@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { faDiscord, faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faDiscord, faGithub, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import contactStyles from '../styles/ContactSection.module.css';
@@ -64,6 +64,7 @@ const ContactSection: React.FC = () => {
   return (
     <section id="contact" ref={sectionRef} className={`${styles.section} ${contactStyles.contactSection}`}>
       <h2 className={styles.sectionTitle}>Contact Us</h2>
+      
       <div className={contactStyles.contactContainer}>
         <div className={contactStyles.contactInfo}>
           <h3>Get In Touch</h3>
@@ -79,16 +80,35 @@ const ContactSection: React.FC = () => {
             <p>2500 University Drive NW, Calgary, AB</p>
           </div>
           
-          <h4 className={contactStyles.socialTitle}>Our social medias</h4>
+          {/* Social media section moved inside contactInfo */}
+          <h3>Follow our social media</h3>
+          <p className={contactStyles.socialIntro}>
+            Stay updated on upcoming events, trivia questions, and club activities!
+          </p>
           <div className={contactStyles.socialLinks}>
-            <a href="#" className={contactStyles.socialLink} aria-label="Facebook">
-              <FontAwesomeIcon icon={faFacebookF} />
+            <a href="#" className={contactStyles.socialIconLink} aria-label="Instagram">
+              <div className={`${contactStyles.socialIconCircle} ${contactStyles.instagram}`}>
+                <FontAwesomeIcon icon={faInstagram} className={contactStyles.socialIcon} />
+              </div>
+              <span>Instagram</span>
             </a>
-            <a href="#" className={contactStyles.socialLink} aria-label="Instagram">
-              <FontAwesomeIcon icon={faInstagram} />
+            <a href="#" className={contactStyles.socialIconLink} aria-label="Discord">
+              <div className={`${contactStyles.socialIconCircle} ${contactStyles.discord}`}>
+                <FontAwesomeIcon icon={faDiscord} className={contactStyles.socialIcon} />
+              </div>
+              <span>Discord</span>
             </a>
-            <a href="#" className={contactStyles.socialLink} aria-label="Discord">
-              <FontAwesomeIcon icon={faDiscord} />
+            <a href="#" className={contactStyles.socialIconLink} aria-label="GitHub">
+              <div className={`${contactStyles.socialIconCircle} ${contactStyles.github}`}>
+                <FontAwesomeIcon icon={faGithub} className={contactStyles.socialIcon} />
+              </div>
+              <span>GitHub</span>
+            </a>
+            <a href="#" className={contactStyles.socialIconLink} aria-label="TikTok">
+              <div className={`${contactStyles.socialIconCircle} ${contactStyles.tiktok}`}>
+                <FontAwesomeIcon icon={faTiktok} className={contactStyles.socialIcon} />
+              </div>
+              <span>TikTok</span>
             </a>
           </div>
         </div>

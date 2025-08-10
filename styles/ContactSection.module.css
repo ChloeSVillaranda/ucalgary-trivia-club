@@ -13,83 +13,111 @@
   flex: 1;
 }
 
+.contactInfo {
+  flex: 1;
+  padding-right: 30px;
+}
+
 .contactInfo h3, 
 .contactForm h3 {
   color: #d11616;
   margin-bottom: 20px;
+  font-family: inherit; /* Use the same font as other sections */
 }
 
-.contactDetail {
-  display: flex;
-  align-items: center;
+.socialIntro {
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Social Media Section Styles */
+.socialMediaContainer {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.socialMediaContainer h3 {
+  font-size: 2rem;
+  color: #333;
   margin-bottom: 15px;
-}
-
-.icon {
-  margin-right: 10px;
-  font-size: 1.2rem;
-}
-
-.socialTitle {
-  margin-top: 30px;
-  margin-bottom: 12px;
-  font-size: 1.1rem;
-  color: #555;
-  font-weight: 600;
 }
 
 .socialLinks {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
   margin-top: 15px;
+  justify-content: center; /* Center the social media icons */
 }
 
-.socialLink {
+.socialIconLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.socialIconLink:hover {
+  transform: translateY(-5px);
+}
+
+.socialIconCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: #f2f2f2;
-  border-radius: 50%;
+  background-color: #f8f8f8;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
-  color: #333;
-  font-size: 1.5rem;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* Brand-specific colors */
-.socialLink:nth-child(1) {
-  color: #3b5998; /* Facebook blue */
+.socialIcon {
+  font-size: 24px;
+  display: flex; /* Ensure icon is centered */
+  align-items: center;
+  justify-content: center;
 }
 
-.socialLink:nth-child(2) {
-  color: #E1306C; /* Instagram gradient color */
+.instagram {
+  background: white;
+  color: #E1306C;
 }
-
-.socialLink:nth-child(3) {
-  color: #5865F2; /* Discord color */
-}
-
-.socialLink:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Brand-specific hover effects */
-.socialLink:nth-child(1):hover {
-  background-color: #3b5998;
-  color: white;
-}
-
-.socialLink:nth-child(2):hover {
+.socialIconLink:hover .instagram {
   background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
   color: white;
 }
 
-.socialLink:nth-child(3):hover {
+.discord {
+  background: white;
+  color: #5865F2;
+}
+.socialIconLink:hover .discord {
   background-color: #5865F2;
+  color: white;
+}
+
+.github {
+  background: white;
+  color: #333;
+}
+.socialIconLink:hover .github {
+  background-color: #333;
+  color: white;
+}
+
+.tiktok {
+  background: white;
+  color: #000;
+}
+.socialIconLink:hover .tiktok {
+  background: linear-gradient(45deg, #25F4EE, #000000, #FE2C55);
   color: white;
 }
 
@@ -147,26 +175,22 @@
 }
 
 @media (max-width: 768px) {
-  .contactInfo, 
-  .contactForm {
-    text-align: center;
+  .contactContainer {
+    flex-direction: column;
   }
   
-  .contactForm form {
-    max-width: 400px;
-    margin: 0 auto;
+  .contactInfo {
+    padding-right: 0;
+    margin-bottom: 30px;
   }
   
-  .contactDetail {
-    justify-content: center;
+  .socialIconCircle {
+    width: 40px;
+    height: 40px;
   }
   
-  .socialLinks {
-    justify-content: center;
-  }
-  
-  .formGroup {
-    text-align: left;
+  .socialIcon {
+    font-size: 20px;
   }
 }
 

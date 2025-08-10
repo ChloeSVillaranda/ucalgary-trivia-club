@@ -36,22 +36,27 @@ const MembershipSection: React.FC = () => {
     };
   }, []);
 
-  // Example data for current members
+  // Current members. To be edited. 
   const currentMembers: Member[] = [
     {
-      name: "John Doe",
+      name: "Chloe Villaranda",
       position: "President",
-      bio: "UFC enthusiast since 2010, specializing in fighter statistics."
+      bio: "Coming soon."
     },
     {
-      name: "Jane Smith",
+      name: "Sukriti Badhwar",
       position: "Vice President",
-      bio: "MMA analyst and event coordinator."
+      bio: "Coming soon."
     },
     {
-      name: "Mike Johnson",
+      name: "Chantae Ho",
       position: "Treasurer",
-      bio: "Finance major with a passion for UFC history."
+      bio: "Coming soon."
+    },
+    {
+      name: "Maham Jamal",
+      position: "Secretary",
+      bio: "Coming soon."
     },
   ];
 
@@ -155,7 +160,7 @@ const MembershipSection: React.FC = () => {
       <div className={memberStyles.memberContainer}>
         <h3 className={styles.sectionTitle}>Current Members</h3>
         <p className={memberStyles.memberIntro}>
-          Meet the team behind our UFC Trivia community
+          Meet the team behind our UCalgary Trivia community
         </p>
         
         <div className={memberStyles.membersContainer}>
