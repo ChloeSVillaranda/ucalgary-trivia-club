@@ -82,6 +82,9 @@ function Header() {
           <a onClick={() => scrollToSection('trivia')} className={styles.navLink}>
             Trivia
           </a>
+          <a onClick={() => scrollToSection('other')} className={styles.navLink}>
+            Other
+          </a>
           <a onClick={() => scrollToSection('faq')} className={styles.navLink}>
             FAQ
           </a>

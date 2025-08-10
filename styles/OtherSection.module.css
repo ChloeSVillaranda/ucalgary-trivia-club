@@ -1,0 +1,64 @@
+.otherSection {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  position: relative;
+  z-index: 1;
+}
+
+.description {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1; /* Ensure description is visible */
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 1; /* Ensure buttons container is visible */
+}
+
+.linkButton {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #d11616; /* Changed to match primaryButton color */
+  color: white;
+  border-radius: 4px; /* Match other buttons */
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  min-width: 150px;
+  text-align: center;
+}
+
+.linkButton:hover {
+  background-color: #a21212; /* Match primaryButton hover */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.linkButton:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .buttonsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .linkButton {
+    width: 80%;
+    max-width: 300px;
+  }
+}
