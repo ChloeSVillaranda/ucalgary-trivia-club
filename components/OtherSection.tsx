@@ -64,7 +64,7 @@ const OtherSection: React.FC = () => {
   return (
     <section id="other" ref={sectionRef} className={`${styles.section} ${otherStyles.otherSection}`}>
       <h2 className={styles.sectionTitle}>Other</h2>
-      <p className={otherStyles.description}>Click on each button to be redirected to:</p>
+      <p className={otherStyles.description}>Additional resources and platforms available for club members and visitors:</p>
       
       <div className={otherStyles.buttonsContainer}>
         {links.map((link, index) => (
