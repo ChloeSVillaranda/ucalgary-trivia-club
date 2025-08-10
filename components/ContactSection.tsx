@@ -82,7 +82,7 @@ const ContactSection: React.FC = () => {
           
           {/* Social media section moved inside contactInfo */}
           <h3>Follow our social media</h3>
-          <p className={contactStyles.socialIntro}>
+          <p>
             Stay updated on upcoming events, trivia questions, and club activities!
           </p>
           <div className={contactStyles.socialLinks}>

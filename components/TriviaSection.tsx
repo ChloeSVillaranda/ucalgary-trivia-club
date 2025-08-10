@@ -44,71 +44,68 @@ const TriviaSection: React.FC = () => {
 
   // Quiz data for each card
   const quizData = [
-    // Fighter Trivia
+    // Calgary Trivia
     [
       {
-        questionText: 'Who was the first UFC Heavyweight Champion?',
+        questionText: 'In what year was the city of Calgary founded?',
         answerOptions: [
-          { answerText: 'Mark Coleman', isCorrect: true },
-          { answerText: 'Randy Couture', isCorrect: false },
-          { answerText: 'Ken Shamrock', isCorrect: false },
-          { answerText: 'Royce Gracie', isCorrect: false },
+          { answerText: '1875', isCorrect: true },
+          { answerText: '1883', isCorrect: false },
+          { answerText: '1905', isCorrect: false },
+          { answerText: '1914', isCorrect: false },
         ],
       },
       {
-        questionText: 'Which fighter has the most knockouts in UFC history?',
+        questionText: 'What is the name of Calgary\'s annual rodeo event?',
         answerOptions: [
-          { answerText: 'Derrick Lewis', isCorrect: false },
-          { answerText: 'Vitor Belfort', isCorrect: false },
-          { answerText: 'Anderson Silva', isCorrect: false },
-          { answerText: 'Matt Brown', isCorrect: true },
+          { answerText: 'Calgary Round-Up', isCorrect: false },
+          { answerText: 'Calgary Stampede', isCorrect: true },
+          { answerText: 'Alberta Rodeo', isCorrect: false },
+          { answerText: 'Prairie Festival', isCorrect: false },
         ],
       },
-      // Add more questions as needed
     ],
-    // Event Trivia
+    // UCalgary Trivia
     [
       {
-        questionText: 'What year was the first UFC event held?',
+        questionText: 'In what year was the University of Calgary established as an autonomous institution?',
         answerOptions: [
-          { answerText: '1991', isCorrect: false },
-          { answerText: '1992', isCorrect: false },
-          { answerText: '1993', isCorrect: true },
-          { answerText: '1995', isCorrect: false },
+          { answerText: '1945', isCorrect: false },
+          { answerText: '1966', isCorrect: true },
+          { answerText: '1972', isCorrect: false },
+          { answerText: '1988', isCorrect: false },
         ],
       },
       {
-        questionText: 'Which venue has hosted the most UFC events?',
+        questionText: 'What is the name of UCalgary\'s mascot?',
         answerOptions: [
-          { answerText: 'T-Mobile Arena', isCorrect: false },
-          { answerText: 'MGM Grand Garden Arena', isCorrect: false },
-          { answerText: 'UFC Apex', isCorrect: true },
-          { answerText: 'Madison Square Garden', isCorrect: false },
+          { answerText: 'Rex the Tyrannosaurus', isCorrect: false },
+          { answerText: 'Dexter the Dino', isCorrect: false },
+          { answerText: 'Rex the Dinosaur', isCorrect: true },
+          { answerText: 'Cal the Dinosaur', isCorrect: false },
         ],
       },
-      // Add more questions as needed
     ],
-    // UFC History
+    // UCalgary Trivia Club Trivia
     [
       {
-        questionText: 'Who founded the UFC?',
+        questionText: 'When was the UCalgary Trivia Club founded?',
         answerOptions: [
-          { answerText: 'Dana White', isCorrect: false },
-          { answerText: 'Art Davie', isCorrect: true },
-          { answerText: 'Lorenzo Fertitta', isCorrect: false },
-          { answerText: 'Joe Rogan', isCorrect: false },
+          { answerText: '2022', isCorrect: false },
+          { answerText: '2023', isCorrect: false },
+          { answerText: '2024', isCorrect: true },
+          { answerText: '2025', isCorrect: false },
         ],
       },
       {
-        questionText: 'In what year did the UFC introduce weight classes?',
+        questionText: 'What is the Trivia Club\'s slogan?',
         answerOptions: [
-          { answerText: '1995', isCorrect: false },
-          { answerText: '1997', isCorrect: true },
-          { answerText: '1999', isCorrect: false },
-          { answerText: '2001', isCorrect: false },
+          { answerText: 'Knowledge is Power', isCorrect: false },
+          { answerText: 'Brainy Nights, Dino Delights', isCorrect: true },
+          { answerText: 'Question Everything', isCorrect: false },
+          { answerText: 'Trivia Champions', isCorrect: false },
         ],
       },
-      // Add more questions as needed
     ]
   ];
 
@@ -259,22 +256,22 @@ const TriviaSection: React.FC = () => {
         <div className={triviaStyles.triviaCard}>
           {renderCardContent(
             0, 
-            "Fighter Trivia", 
-            "Test your knowledge about UFC fighters, their records, and achievements."
+            "Calgary Trivia", 
+            "Test your knowledge about our vibrant city of Calgary."
           )}
         </div>
         <div className={triviaStyles.triviaCard}>
           {renderCardContent(
             1, 
-            "Event Trivia", 
-            "Challenge yourself with questions about historic UFC events and moments."
+            "UCalgary Trivia", 
+            "How much do you know about the University of Calgary?"
           )}
         </div>
         <div className={triviaStyles.triviaCard}>
           {renderCardContent(
             2, 
-            "UFC History", 
-            "How well do you know the history and evolution of the UFC?"
+            "Trivia Club Trivia", 
+            "See if you know all about the UCalgary Trivia Club!"
           )}
         </div>
       </div>
