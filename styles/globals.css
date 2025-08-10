@@ -11,6 +11,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f5f5f5;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 code {
@@ -47,9 +49,8 @@ code {
   text-align: center;
   padding: 5px 0;
   font-size: 14px;
-  position: relative;
-  bottom: 0;
   width: 100%;
+  margin-top: auto; /* This pushes the footer down */
 }
 
 .particles-container {
@@ -96,7 +97,123 @@ body, #__next {
 }
 
 main {
-  flex: 1;
+  flex: 1 0 auto !important; /* Force main to take all available space */
 }
 
-/* Add any other global styles you need */
+footer {
+  flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+/* Fix for Next.js specific structure */
+#__next > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Make sure pages with minimal content still fill viewport */
+.page-content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* For the specific blog page issue */
+body > div > main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Improved header text readability for subpages */
+.subpage-header a,
+a[href="/"],
+a[href="/"]:visited,
+a.back-link {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Remove ALL hover styling from globals to prevent conflicts */
+.subpage-header a:hover,
+a[href="/"]:hover,
+a.back-link:hover {
+  /* Remove ALL hover styles from here */
+  /* No transform, no shadow, nothing that could conflict */
+}
+
+/* Fix for duplicate arrows - remove the ::before content */
+a[href="/"]::before,
+a.back-link::before {
+  /* Remove this content to prevent duplicate arrows */
+  content: none;
+}
+
+/* Specific styling for subpage header containers */
+.header-container {
+  position: relative;
+  padding: 20px;
+  z-index: 2;
+}
+
+/* For blog posts and other subpages with banner images */
+.page-banner {
+  position: relative;
+}
+
+.page-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+  z-index: 1;
+}
+
+/* Make page titles (like "Blog") more readable */
+h1, 
+.page-title,
+.blog-title {
+  color: white !important;
+  text-shadow: 
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    0 0 10px rgba(0,0,0,0.8);
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Specifically target the "Blog" header */
+h1:contains("Blog"),
+*[id*="blog-title"],
+.blog-header h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+/* Additional styling for page headers to ensure visibility */
+.page-banner h1,
+.banner-content h1,
+.banner-text {
+  color: white !important;
+  text-shadow: 
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    0 0 15px rgba(0,0,0,0.9);
+  z-index: 2;
+  position: relative;
+}
