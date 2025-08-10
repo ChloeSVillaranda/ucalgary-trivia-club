@@ -20,6 +20,10 @@ const TriviaSection: React.FC = () => {
   const [currentQuestions, setCurrentQuestions] = useState([0, 0, 0]);
   // Track selected answers for each card
   const [selectedAnswers, setSelectedAnswers] = useState<Array<number | null>>([null, null, null]);
+  // Track whether each quiz is completed
+  const [quizCompleted, setQuizCompleted] = useState([false, false, false]);
+  // Track the score for each quiz
+  const [quizScores, setQuizScores] = useState([0, 0, 0]);
   
   useEffect(() => {
     const observerOptions = {
@@ -118,12 +122,29 @@ const TriviaSection: React.FC = () => {
     const newSelectedAnswers = [...selectedAnswers];
     newSelectedAnswers[cardIndex] = null;
     setSelectedAnswers(newSelectedAnswers);
+    
+    // Reset quiz completion status
+    const newQuizCompleted = [...quizCompleted];
+    newQuizCompleted[cardIndex] = false;
+    setQuizCompleted(newQuizCompleted);
+    
+    // Reset score
+    const newQuizScores = [...quizScores];
+    newQuizScores[cardIndex] = 0;
+    setQuizScores(newQuizScores);
   };
 
   const handleAnswerClick = (cardIndex: number, answerIndex: number) => {
     const newSelectedAnswers = [...selectedAnswers];
     newSelectedAnswers[cardIndex] = answerIndex;
     setSelectedAnswers(newSelectedAnswers);
+    
+    // Update score if answer is correct
+    if (quizData[cardIndex][currentQuestions[cardIndex]].answerOptions[answerIndex].isCorrect) {
+      const newQuizScores = [...quizScores];
+      newQuizScores[cardIndex] += 1;
+      setQuizScores(newQuizScores);
+    }
   };
 
   const handleNextQuestion = (cardIndex: number) => {
@@ -140,14 +161,10 @@ const TriviaSection: React.FC = () => {
       newSelectedAnswers[cardIndex] = null;
       setSelectedAnswers(newSelectedAnswers);
     } else {
-      // End of questions, reset this card
-      const newActiveCards = [...activeCards];
-      newActiveCards[cardIndex] = false;
-      setActiveCards(newActiveCards);
-      
-      const newCurrentQuestions = [...currentQuestions];
-      newCurrentQuestions[cardIndex] = 0;
-      setCurrentQuestions(newCurrentQuestions);
+      // End of questions, show the completion screen
+      const newQuizCompleted = [...quizCompleted];
+      newQuizCompleted[cardIndex] = true;
+      setQuizCompleted(newQuizCompleted);
     }
   };
 
@@ -164,9 +181,37 @@ const TriviaSection: React.FC = () => {
     const newSelectedAnswers = [...selectedAnswers];
     newSelectedAnswers[cardIndex] = null;
     setSelectedAnswers(newSelectedAnswers);
+    
+    // Reset completed state
+    const newQuizCompleted = [...quizCompleted];
+    newQuizCompleted[cardIndex] = false;
+    setQuizCompleted(newQuizCompleted);
   };
 
   const renderCardContent = (cardIndex: number, title: string, description: string) => {
+    // If quiz is completed, show the summary screen
+    if (quizCompleted[cardIndex]) {
+      return (
+        <div className={`${triviaStyles.completionContainer} ${triviaStyles.fadeIn}`}>
+          <h3>{title} - Quiz Completed!</h3>
+          <p className={triviaStyles.scoreText}>
+            Your Score: {quizScores[cardIndex]} out of {quizData[cardIndex].length}
+          </p>
+          {quizScores[cardIndex] === quizData[cardIndex].length ? (
+            <p className={triviaStyles.perfectScore}>Perfect Score! Great job!</p>
+          ) : (
+            <p>Good effort!</p>
+          )}
+          <button 
+            className={triviaStyles.triviaButton}
+            onClick={() => handleResetQuiz(cardIndex)}
+          >
+            Back to Trivia Menu
+          </button>
+        </div>
+      );
+    }
+    
     if (activeCards[cardIndex]) {
       // Show the quiz
       const currentQuestion = quizData[cardIndex][currentQuestions[cardIndex]];
@@ -213,21 +258,12 @@ const TriviaSection: React.FC = () => {
                 }
               </p>
               
-              {currentQuestions[cardIndex] < quizData[cardIndex].length - 1 ? (
-                <button 
-                  className={triviaStyles.nextButton}
-                  onClick={() => handleNextQuestion(cardIndex)}
-                >
-                  Next Question
-                </button>
-              ) : (
-                <button 
-                  className={triviaStyles.nextButton}
-                  onClick={() => handleResetQuiz(cardIndex)}
-                >
-                  Finish Quiz
-                </button>
-              )}
+              <button 
+                className={triviaStyles.nextButton}
+                onClick={() => handleNextQuestion(cardIndex)}
+              >
+                Next Question
+              </button>
             </div>
           )}
         </div>
