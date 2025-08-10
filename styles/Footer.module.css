@@ -1,0 +1,19 @@
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

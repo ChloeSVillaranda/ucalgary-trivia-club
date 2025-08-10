@@ -1,0 +1,36 @@
+.pageContent {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contentHeading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.contentParagraph {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.placeholder {
+  padding: 3rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2rem 0;
+  border: 1px dashed #ccc;
+}
+
+@media (max-width: 768px) {
+  .pageContent {
+    padding: 1.5rem;
+  }
+  
+  .contentHeading {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,37 @@
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  background-color: #f9f9f9;
+}
+
+.contentWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.placeholder {
+  margin-top: 2rem;
+  padding: 3rem;
+  background-color: #eee;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.heading {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.paragraph {
+  line-height: 1.6;
+  color: #444;
+}
