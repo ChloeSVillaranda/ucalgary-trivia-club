@@ -37,21 +37,19 @@
 }
 
 .banner {
-  /* Add overlay similar to example image */
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url('/assets/UCalgary_Common_Space.jpg');
   background-size: cover;
   background-position: center;
-  /* Increase height to match example */
   height: 80vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   text-align: center;
   color: white;
-  position: relative; /* Ensure this is set for absolute positioning */
+  position: relative;
   overflow: hidden;
   padding-top: 15vh;
-  font-family: 'Montserrat', sans-serif; /* Adding modern sans-serif font */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .bannerContent {
@@ -61,8 +59,8 @@
   max-width: 900px;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
-  background-color: rgba(0, 0, 0, 0.6); /* Added semi-transparent dark background */
-  padding: 2.5rem 1rem; /* Adding some padding */
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem 1rem;
 }
 
 /* Scroll down indicator */
@@ -89,7 +87,7 @@
 }
 
 .scrollChevron {
-  width: 150px; /* Increased from 100px */
+  width: 150px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -108,8 +106,8 @@
 .scrollChevron svg {
   width: 100%;
   height: 30px;
-  transform: scaleX(1.5); /* This stretches the SVG horizontally */
-  fill: #ffd700; /* Yellow/gold color */
+  transform: scaleX(1.5);
+  fill: #ffd700;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
 
@@ -130,16 +128,6 @@
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   letter-spacing: 2px;
   font-family: 'Roboto', sans-serif; /* Complementary font */
-}
-
-.tagline {
-  font-size: 1.6rem;
-  margin-top: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  animation: slideUp 1s ease-out 0.3s backwards;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: #ffd700; /* Gold color for the tagline */
 }
 
 .navContainer {
@@ -180,6 +168,42 @@
   width: 100%;
 }
 
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -20px;
+}
+
+.clubLogo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: -20px;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  
+  .subtitle {
+    font-size: 2.2rem;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+  }
+  
+  .navContainer {
+    gap: 1.5rem;
+  }
+  
+  .clubLogo {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -205,23 +229,5 @@
   }
   60% {
     transform: translateY(-5px);
-  }
-}
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 3rem;
-  }
-  
-  .subtitle {
-    font-size: 2.2rem;
-  }
-  
-  .tagline {
-    font-size: 1.2rem;
-  }
-  
-  .navContainer {
-    gap: 1.5rem;
   }
 }

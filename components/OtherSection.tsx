@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
+
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
 import otherStyles from '../styles/OtherSection.module.css';
+import styles from '../styles/Home.module.css';
 
 const OtherSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -28,12 +29,36 @@ const OtherSection: React.FC = () => {
   }, []);
 
   const links = [
-    { name: "Blog", path: "/blog" },
-    { name: "Resources", path: "/resources" },
-    { name: "Gallery", path: "/gallery" },
-    { name: "Events", path: "/events" },
-    { name: "Yippee", path: "/yippee" },
-    { name: "DailiesBot", path: "/dailiesbot" }
+    { 
+      name: "Blog", 
+      path: "/blog", 
+      description: "Blog: Click here to see our blog" 
+    },
+    { 
+      name: "Resources", 
+      path: "/resources", 
+      description: "Resources: Want to improve your trivia game? Click here to look at useful trivia resources!" 
+    },
+    { 
+      name: "Gallery", 
+      path: "/gallery", 
+      description: "Gallery: Click here to look at photos from our past events" 
+    },
+    { 
+      name: "Events", 
+      path: "/events", 
+      description: "Events: Click here to view information about our future events" 
+    },
+    { 
+      name: "Yippee", 
+      path: "/yippee", 
+      description: "Yippee! Click here to be redirected to a student created Trivia web application." 
+    },
+    { 
+      name: "DailiesBot", 
+      path: "/dailiesbot", 
+      description: "DailiesBot: need a discord bot to track your scores for daily games? Click here to get yourself a bot" 
+    }
   ];
 
   return (
@@ -43,13 +68,15 @@ const OtherSection: React.FC = () => {
       
       <div className={otherStyles.buttonsContainer}>
         {links.map((link, index) => (
-          <Link 
-            key={index} 
-            href={link.path}
-            className={otherStyles.linkButton}
-          >
-            {link.name}
-          </Link>
+          <div key={index} className={otherStyles.linkItem}>
+            <Link 
+              href={link.path}
+              className={otherStyles.linkButton}
+            >
+              {link.name}
+            </Link>
+            <p className={otherStyles.linkDescription}>{link.description}</p>
+          </div>
         ))}
       </div>
     </section>

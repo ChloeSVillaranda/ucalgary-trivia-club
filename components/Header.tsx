@@ -37,13 +37,19 @@ function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.banner}>
         <div className={styles.bannerContent}>
+          <div className={styles.logoContainer}>
+            <img 
+              src="/assets/UniversityOfCalgaryLogoTransparent.png" 
+              alt="University of Calgary Trivia Club Logo" 
+              className={styles.clubLogo}
+            />
+          </div>
           <h1 className={styles.title}>
             <span className={styles.subtitle}>University of Calgary</span>
             <br />TRIVIA CLUB
           </h1>
           <p>UCTC</p>
           <p>The only club on campus dedicated to trivia.</p>
-          <p className={styles.tagline}>Brainy Nights, Dino Delights</p>
         </div>
 
         {/* Scroll indicator with multiple chevrons */}
