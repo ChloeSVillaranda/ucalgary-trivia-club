@@ -32,32 +32,32 @@ const OtherSection: React.FC = () => {
     { 
       name: "Blog", 
       path: "/blog", 
-      description: "Blog: Click here to see our blog" 
+      description: "Access our official blog featuring trivia insights, club updates, and community content." 
     },
     { 
       name: "Resources", 
       path: "/resources", 
-      description: "Resources: Want to improve your trivia game? Click here to look at useful trivia resources!" 
+      description: "Enhance your trivia knowledge with our curated collection of educational resources and reference materials." 
     },
     { 
       name: "Gallery", 
       path: "/gallery", 
-      description: "Gallery: Click here to look at photos from our past events" 
+      description: "Browse photographs from our past competitions, social gatherings, and campus events." 
     },
     { 
       name: "Events", 
       path: "/events", 
-      description: "Events: Click here to view information about our future events" 
+      description: "View our upcoming schedule of trivia competitions, guest speakers, and social gatherings." 
     },
     { 
       name: "Yippee", 
       path: "/yippee", 
-      description: "Yippee! Click here to be redirected to a student created Trivia web application." 
+      description: "Experience our student-developed trivia application designed to test and expand your knowledge." 
     },
     { 
       name: "DailiesBot", 
       path: "/dailiesbot", 
-      description: "DailiesBot: need a discord bot to track your scores for daily games? Click here to get yourself a bot" 
+      description: "Implement our Discord bot to track scores and manage daily trivia competitions for your server." 
     }
   ];
 
