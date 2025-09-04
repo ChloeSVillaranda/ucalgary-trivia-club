@@ -21,8 +21,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/ufc-trivia-website.git
-cd ufc-trivia-website
+git clone https://github.com/your-username/ucalgary-trivia-website.git
+cd ucalgary-trivia-website
 ```
 
 2. Install dependencies
@@ -70,7 +70,7 @@ Runs the linter to check for code style issues.
 
 This project can be easily deployed to Vercel, the platform built by the creators of Next.js:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/yourusername/ufc-trivia-website)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/yourusername/ucalgary-trivia-website)
 
 ## Learn More
 
