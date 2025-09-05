@@ -70,7 +70,7 @@ const AboutSection: React.FC = () => {
             width={300}
             height={300}
             className={aboutStyles.mascotImage}
-            priority={true}
+            priority
           />
         </div>
       </div>

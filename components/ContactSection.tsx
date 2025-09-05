@@ -3,6 +3,7 @@ import { faDiscord, faGithub, faInstagram, faTiktok } from '@fortawesome/free-br
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import contactStyles from '../styles/ContactSection.module.css';
+import emailjs from 'emailjs-com';
 import styles from '../styles/Home.module.css';
 
 const ContactSection: React.FC = () => {
@@ -10,6 +11,7 @@ const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,12 +50,41 @@ const ContactSection: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission - replace with actual API call
     try {
-      // Fake API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
+      const CONTACT_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID as string;
+      const AUTO_REPLY_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_AUTO_REPLY_TEMPLATE_ID as string;
+      const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string;
+
+
+      // 1. Send to Club email
+      await emailjs.send(
+        SERVICE_ID,
+        CONTACT_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        PUBLIC_KEY
+      );
+
+      // 2. Send auto-reply to sender
+      await emailjs.send(
+        SERVICE_ID,
+        AUTO_REPLY_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          title: formData.subject,
+          message: formData.message,
+        },
+        PUBLIC_KEY
+      );
+        
       setSubmitMessage('Thank you for your message! We will get back to you soon.');
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       setSubmitMessage('There was an error sending your message. Please try again.');
     } finally {
@@ -117,11 +148,17 @@ const ContactSection: React.FC = () => {
           <h3>Send us a Message</h3>
           
           {submitMessage && (
-            <div className={contactStyles.formMessage}>
+            <div
+              className={
+                submitMessage.startsWith('There was an error')
+                  ? contactStyles.formError
+                  : contactStyles.formMessage
+              }
+            >
               {submitMessage}
             </div>
           )}
-          
+                    
           <form onSubmit={handleSubmit}>
             <div className={contactStyles.formGroup}>
               <label htmlFor="name">Name</label>
@@ -142,6 +179,18 @@ const ContactSection: React.FC = () => {
                 id="email"
                 name="email"
                 value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className={contactStyles.formGroup}>
+              <label htmlFor="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
                 onChange={handleChange}
                 required
               />
