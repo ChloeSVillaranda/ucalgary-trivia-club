@@ -170,7 +170,6 @@ const MembershipSection: React.FC = () => {
               className={memberStyles.memberCard}
             >
               <div className={memberStyles.memberImageContainer}>
-                {/* Removed Image component causing fetchPriority warning */}
                 <div className={memberStyles.memberPlaceholder}>
                   <span>
                     {member.name.charAt(0)}
