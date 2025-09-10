@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import Image from 'next/image'; // Add import
 import memberStyles from '../styles/MembershipSection.module.css';
 import styles from '../styles/Home.module.css';
 
@@ -41,21 +42,31 @@ const MembershipSection: React.FC = () => {
     {
       name: "Chloe Villaranda",
       position: "President",
-      bio: "Coming soon."
+      imageUrl: "/assets/chloe.jfif",
+      bio: "I made a trivia club because I love trivia so much! 🤩🤩🤩"
     },
     {
       name: "Sukriti Badhwar",
       position: "Vice President",
-      bio: "Coming soon."
+      imageUrl: "/assets/sukriti.jpg",
+      bio: "I am Sukriti a 4th year software Engg and business student. I love spending time with my friends and be nerdy together"
     },
     {
       name: "Chantae Ho",
       position: "Treasurer",
-      bio: "Coming soon."
+      imageUrl: "/assets/chantae.jfif",
+      bio: "Amateur trivia enthusiast, whose side job is being a software engineering student 😆. In the 'trivial pursuit' of the perfect trivia team name (suggestions welcome). Looking forward to going to trivia events this year!"
     },
     {
       name: "Maham Jamal",
       position: "Secretary",
+      imageUrl: "/assets/maham.jfif",
+      bio: "hey!! my name is maham and i’m a 5th year software engg student doing a minor in biomedical engg. i love painting when im not ripping my hair out while debugging code. my guessing accuracy is 56.5% so don’t bother copying my answers on trivia nights"
+    },
+    {
+      name: "Huiying Zhenzhen",
+      position: "Events Coordinator",
+      imageUrl: "/assets/members/huiying.jpg",
       bio: "Coming soon."
     },
   ];
@@ -94,9 +105,15 @@ const MembershipSection: React.FC = () => {
               </p>
             </div>
             <div className={memberStyles.buttonContainer}>
-              <button className={styles.primaryButton}>
-                Apply Now
-              </button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeAC_U5k0pRnWev-RikadYsEi8WGku6O7ilecoZM26sWI4wWA/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className={styles.primaryButton}>
+                  Apply Now
+                </button>
+              </a>
             </div>
           </div>
           
@@ -122,9 +139,15 @@ const MembershipSection: React.FC = () => {
               </p>
             </div>
             <div className={memberStyles.buttonContainer}>
-              <button className={styles.primaryButton}>
-                Apply Now
-              </button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdP4TnBVH3eN-QXyHmv5n_qB4K35MesnSURI9QcWs3D_eEcNQ/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className={styles.primaryButton}>
+                  Apply Now
+                </button>
+              </a>
             </div>
           </div>
 
@@ -148,9 +171,15 @@ const MembershipSection: React.FC = () => {
               </p>
             </div>
             <div className={memberStyles.buttonContainer}>
-              <button className={styles.primaryButton}>
-                Apply Now
-              </button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdP4TnBVH3eN-QXyHmv5n_qB4K35MesnSURI9QcWs3D_eEcNQ/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className={styles.primaryButton}>
+                  Apply Now
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -170,11 +199,21 @@ const MembershipSection: React.FC = () => {
               className={memberStyles.memberCard}
             >
               <div className={memberStyles.memberImageContainer}>
-                <div className={memberStyles.memberPlaceholder}>
-                  <span>
-                    {member.name.charAt(0)}
-                  </span>
-                </div>
+                {member.imageUrl ? (
+                  <Image
+                    src={member.imageUrl}
+                    alt={member.name}
+                    width={100}
+                    height={100}
+                    className={memberStyles.memberImage}
+                  />
+                ) : (
+                  <div className={memberStyles.memberPlaceholder}>
+                    <span>
+                      {member.name.charAt(0)}
+                    </span>
+                  </div>
+                )}
               </div>
               <h3>{member.name}</h3>
               <p className={memberStyles.memberPosition}>{member.position}</p>
