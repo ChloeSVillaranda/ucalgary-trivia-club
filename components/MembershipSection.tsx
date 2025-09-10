@@ -48,8 +48,8 @@ const MembershipSection: React.FC = () => {
     {
       name: "Sukriti Badhwar",
       position: "Vice President",
-      imageUrl: "/assets/members/sukriti.jpg",
-      bio: "Coming soon."
+      imageUrl: "/assets/sukriti.jpg",
+      bio: "I am Sukriti a 4th year software Engg and business student. I love spending time with my friends and be nerdy together"
     },
     {
       name: "Chantae Ho",
@@ -105,9 +105,15 @@ const MembershipSection: React.FC = () => {
               </p>
             </div>
             <div className={memberStyles.buttonContainer}>
-              <button className={styles.primaryButton}>
-                Apply Now
-              </button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeAC_U5k0pRnWev-RikadYsEi8WGku6O7ilecoZM26sWI4wWA/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className={styles.primaryButton}>
+                  Apply Now
+                </button>
+              </a>
             </div>
           </div>
           
@@ -133,9 +139,15 @@ const MembershipSection: React.FC = () => {
               </p>
             </div>
             <div className={memberStyles.buttonContainer}>
-              <button className={styles.primaryButton}>
-                Apply Now
-              </button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdP4TnBVH3eN-QXyHmv5n_qB4K35MesnSURI9QcWs3D_eEcNQ/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className={styles.primaryButton}>
+                  Apply Now
+                </button>
+              </a>
             </div>
           </div>
 
@@ -159,9 +171,15 @@ const MembershipSection: React.FC = () => {
               </p>
             </div>
             <div className={memberStyles.buttonContainer}>
-              <button className={styles.primaryButton}>
-                Apply Now
-              </button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdP4TnBVH3eN-QXyHmv5n_qB4K35MesnSURI9QcWs3D_eEcNQ/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className={styles.primaryButton}>
+                  Apply Now
+                </button>
+              </a>
             </div>
           </div>
         </div>
