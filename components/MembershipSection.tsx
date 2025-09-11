@@ -42,7 +42,7 @@ const MembershipSection: React.FC = () => {
     {
       name: "Chloe Villaranda",
       position: "President",
-      imageUrl: "/assets/chloe.jfif",
+      imageUrl: "/assets/chloe.png",
       bio: "I made a trivia club because I love trivia so much! 🤩🤩🤩"
     },
     {
@@ -54,20 +54,20 @@ const MembershipSection: React.FC = () => {
     {
       name: "Chantae Ho",
       position: "Treasurer",
-      imageUrl: "/assets/chantae.jfif",
+      imageUrl: "/assets/chantae.png",
       bio: "Amateur trivia enthusiast, whose side job is being a software engineering student 😆. In the 'trivial pursuit' of the perfect trivia team name (suggestions welcome). Looking forward to going to trivia events this year!"
     },
     {
       name: "Maham Jamal",
       position: "Secretary",
-      imageUrl: "/assets/maham.jfif",
+      imageUrl: "/assets/maham.jpeg",
       bio: "hey!! my name is maham and i’m a 5th year software engg student doing a minor in biomedical engg. i love painting when im not ripping my hair out while debugging code. my guessing accuracy is 56.5% so don’t bother copying my answers on trivia nights"
     },
     {
-      name: "Huiying Zhenzhen",
+      name: "Huiying Zhen",
       position: "Events Coordinator",
-      imageUrl: "/assets/members/huiying.jpg",
-      bio: "Coming soon."
+      imageUrl: "/assets/huiying.jpeg",
+      bio: "Hey! I’m in my last semester of software engineering. I like to explore new hobbies in my free time and I joined this club because I enjoy learning random facts everyday!"
     },
   ];
 
@@ -206,6 +206,10 @@ const MembershipSection: React.FC = () => {
                     width={100}
                     height={100}
                     className={memberStyles.memberImage}
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: member.name === "Maham Jamal" ? "80% 50%" : "50% 50%",
+                    }}
                   />
                 ) : (
                   <div className={memberStyles.memberPlaceholder}>
